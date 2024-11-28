@@ -1,0 +1,650 @@
+/* Garantir que o corpo da página ocupe 100% da altura da tela e tenha a imagem de fundo */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh; /* Garantir que a altura mínima seja 100% da tela */
+    overflow-x: hidden; /* Impede que o conteúdo ultrapasse a largura da tela */
+    background-image: url(fundo.png); /* Imagem de fundo */
+    background-size: cover; /* Ajusta a imagem para cobrir toda a área da tela */
+    background-position: center; /* Centraliza a imagem de fundo */
+    display: flex;
+    flex-direction: column; /* Alinha os elementos em coluna (header + conteúdo + footer) */
+}
+
+/* Container principal para garantir que o footer fique no final */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px; /* Compensa a altura do navbar */
+}
+
+header, .navbar-link, .adopt-button {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navbar */
+header {
+    background-color: #d7c099; /* Cor do navbar */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100px;  /* Altura do navbar */
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+/* Container do Cabeçalho */
+.header-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin: 0; /* Sem margens extras */
+    padding: 0; /* Sem padding extra */
+}
+
+/* Estilo do logo */
+header .logo {
+    height: 150px; /* Ajuste a altura para um valor adequado */
+    width: auto;  /* Largura automática para manter a proporção */
+    margin-right: 20px; /* Espaço entre o logo e o título */
+}
+
+/* Título do Navbar */
+h1 {
+    font-size: 24px;
+    color: #fff;
+    margin-left: 10px; /* Adiciona espaço entre o logo e o título */
+}
+
+/* Navbar links */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Faz a navbar ocupar o espaço disponível */
+}
+
+/* Navbar links */
+.navbar-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;  /* Remove qualquer margem extra */
+    padding: 0;  /* Remove qualquer padding extra */
+}
+  
+.navbar-link {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    margin: 0;  /* Remover qualquer margem extra */
+}
+  
+.navbar-link:hover {
+    color: #fff;
+    background-color: #8b7d53; /* Cor de fundo no hover */
+    border-radius: 5px;
+}
+  
+/* Botão "Quero Adotar" */
+.header-action {
+    margin-left: 20px;
+}
+
+.adopt-button {
+    background-color: #8b7d53;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.adopt-button:hover {
+    background-color: #6d5b3b; /* Cor mais escura no hover */
+    cursor: pointer;
+}
+  
+/* Alinhamento do dropdown */
+.navbar .dropdown {
+    position: relative;
+    margin-right: 20px; /* Ajuste o espaçamento entre o dropdown e os itens à direita */
+}
+  
+.navbar .dropdown .dropdown-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    padding: 10px 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+  
+.navbar .dropdown .dropdown-btn:hover {
+    background-color: #8b7d53;
+    color: white;
+}
+  
+/* Estilo do menu dropdown */
+.navbar .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f7f3e8;
+    min-width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 1000;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+  
+.navbar .dropdown-menu .dropdown-item {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    display: block;
+}
+  
+.navbar .dropdown-menu .dropdown-item:hover {
+    background-color: #8b7d53;
+    color: white;
+}
+  
+/* Mostrar o menu quando o botão for clicado */
+.navbar .dropdown.show .dropdown-menu {
+    display: block;
+}
+
+/* Container Principal */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+/* Estilo dos Cartões */
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 48%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 300px; /* Definindo uma altura mínima mais alta */
+}
+
+/* Estilo das Imagens */
+.card img {
+    width: 80px;
+    height: auto;
+    margin-top: 10px;
+}
+
+/* Títulos e Textos */
+.card h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.card p {
+    font-size: 0.9em;
+    color: #555;
+    text-align: justify; /* Justifica o texto para um alinhamento mais uniforme */
+    margin: 10px 0; /* Adiciona espaçamento ao redor do parágrafo */
+}
+
+/* Container do Banner */
+.banner {
+    display: flex;
+    align-items: center; /* Alinha verticalmente o conteúdo */
+    justify-content: space-between; /* Distribui o espaço entre as imagens e o texto */
+    background-color: #f8e7a1;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 20px auto;
+    border: 1px solid #d3c4a7;
+    position: relative; /* Garante que o banner fique abaixo do header fixo */
+    z-index: 0; /* Certifica-se de que o banner fique abaixo do navbar */
+}
+
+.banner img {
+    width: 150px;
+    height: auto;
+}
+
+/* Texto no Banner */
+.banner-text {
+    font-family: 'Poppins', sans-serif; /* Fonte moderna */
+    font-size: 28px;
+    color: #4d2b00; /* Cor mais escura */
+    font-weight: 500; /* Negrito */
+    text-align: center;
+    line-height: 1.3;
+    padding: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave para profundidade */
+}
+
+/* Ajuste para garantir que o conteúdo não sobreponha o banner */
+.main-content {
+    padding-top: 150px; /* Aumenta o padding superior para garantir que o conteúdo não sobreponha o header fixo */
+}
+
+/* Container Secundário */
+.container-geral {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.section-card {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-card img.icon {
+    width: 50px;
+    margin-right: 20px;
+}
+
+/* Estilo para a Seção de Contato */
+.contact-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Garantir que o texto e as imagens fiquem distribuídos */
+    background-color: #d1c094; /* Cor de fundo semelhante */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 20px auto;
+    position: relative;
+    box-sizing: border-box; /* Garante que o padding não cause overflow */
+}
+
+.contact-info {
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
+    flex: 1; /* Permite que o conteúdo ocupe o espaço disponível */
+}
+
+.contact-info h3 {
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+/* Estilo para as Imagens de Animais */
+.pet {
+    width: 150px;  /* Ajuste o tamanho para não ficar tão grande */
+    height: auto;
+    flex-shrink: 0; /* Impede que a imagem encolha */
+    margin: 0 10px; /* Adiciona espaçamento entre a imagem e o conteúdo */
+}
+
+/* Garantir que as imagens não se sobreponham ao conteúdo */
+.pet-left {
+    margin-left: -20px; /* Ajuste leve para a posição esquerda */
+}
+
+.pet-right {
+    margin-right: -20px; /* Ajuste leve para a posição direita */
+}
+
+.contact-CIMA {
+    display: flex;
+    align-items: center; /* Centraliza os itens verticalmente */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    padding: 20px; /* Espaçamento interno */
+    background-color: #d1c094;
+    margin-top: 100px; /* Espaçamento suficiente para evitar sobreposição do navbar fixo */
+}
+      
+.contact-text h1 {
+    font-size: 1.8rem; /* Tamanho do texto */
+    font-weight: bold; /* Texto em negrito */
+    color: #5a3305; /* Cor marrom escura */
+    text-align: center; /* Centraliza o texto */
+    line-height: 1.5; /* Espaçamento entre linhas */
+    font-family: 'Arial', sans-serif; /* Fonte limpa e legível */
+}
+      
+.contact-image img {
+    max-width: 150px; /* Define o tamanho máximo das imagens */
+    height: auto; /* Mantém a proporção */
+    border-radius: 10px; /* Suaviza as bordas da imagem */
+}
+      
+* {
+    box-sizing: border-box;
+}
+    
+.page-container {
+    text-align: center;
+}
+    
+.title {
+    font-family: Arial, sans-serif;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.team-member {
+    min-width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+    
+.profile-frame img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+    
+.profile-info {
+    margin-top: 10px;
+}
+    
+.name {
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+}
+    
+.team-member {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+    
+.team-member img {
+    width: 300%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+    
+.team-name {
+    font-size: 1.2em;
+    color: #333;
+    margin: 10px 0 5px;
+}
+    
+.team-description {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.page-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4d2b00; /* Marrom escuro */
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-member {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #d3c4a7;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.team-member img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.team-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+.team-description {
+    font-size: 0.9rem;
+    color: #555;
+    text-align: justify;
+}
+
+a img {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a img {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Rodapé */
+footer {
+    background-color: #fdf6e4;
+    color: #333;
+    padding: 40px 20px;
+    font-size: 14px;
+    text-align: left;
+    position: relative; /* Não fixo, vai para o fundo da página automaticamente */
+    width: 100%;
+    left: 0; /* Garante que o footer comece da borda esquerda */
+    box-sizing: border-box; /* Inclui o padding na largura */
+    z-index: 1000;
+}
+  
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: relative;
+    width: 100%; /* Garantir que ocupe toda a largura */
+    box-sizing: border-box; /* Inclui o padding na largura do container */
+}
+  
+/* Seções do Rodapé */
+.footer-info, .footer-links, .footer-help, .footer-newsletter {
+    flex: 1;
+    min-width: 200px;
+}
+  
+.footer-info h2, 
+.footer-links h3, 
+.footer-help h3, 
+.footer-newsletter h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+  
+.footer-info p {
+    font-size: 14px;
+    color: #555;
+}
+  
+.footer-links ul, 
+.footer-help ul {
+    list-style: none;
+    padding: 0;
+}
+  
+.footer-links li, 
+.footer-help li {
+    margin-bottom: 5px;
+}
+  
+.footer-links a, 
+.footer-help a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+  
+.footer-links a:hover, 
+.footer-help a:hover {
+    color: #8b7d53; /* Cor de destaque no hover */
+}
+  
+/* Formulário de Inscrição */
+.footer-newsletter form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+  
+.footer-newsletter input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex-grow: 1;
+}
+  
+.footer-newsletter button {
+    background-color: #8b7d53;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+  
+.footer-newsletter button:hover {
+    background-color: #6d5b3b;
+}
+  
+/* Ícones */
+.footer-icons {
+    position: absolute;
+    bottom: -80px;
+    right: 0;
+    display: flex;
+    gap: 20px;
+    box-sizing: border-box; /* Inclui o padding e border dentro da largura total */
+}
+  
+.footer-icons .icon {
+    height: 150px;
+    width: auto;
+    max-width: 100%; /* Garante que a largura dos ícones não ultrapasse a largura do rodapé */
+}
+  
+/* Rodapé Inferior */
+.footer-bottom {
+    text-align: center;
+    font-size: 12px;
+    color: #555;
+    margin-top: 40px;
+}
+  
+.footer-bottom p {
+    margin: 0;
+}
+  
+/* Responsividade */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-newsletter input {
+        width: 200px;
+    }
+  
+    /* Ajuste da navbar para dispositivos móveis */
+    .navbar-list {
+        flex-direction: column; /* Empilha os itens na versão mobile */
+        gap: 10px; /* Garante que os itens não fiquem colados */
+    }
+  
+    header .logo {
+        height: 50px; /* Logo menor em telas pequenas */
+    }
+}

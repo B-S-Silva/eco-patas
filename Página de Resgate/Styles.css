@@ -1,0 +1,495 @@
+/* Garantir que o corpo da página ocupe 100% da altura da tela e tenha a imagem de fundo */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh; /* Garantir que a altura mínima seja 100% da tela */
+  overflow-x: hidden; /* Impede que o conteúdo ultrapasse a largura da tela */
+  background-image: url(fundo.png); /* Imagem de fundo */
+  background-size: cover; /* Ajusta a imagem para cobrir toda a área da tela */
+  background-position: center; /* Centraliza a imagem de fundo */
+  display: flex;
+  flex-direction: column; /* Alinha os elementos em coluna (header + conteúdo + footer) */
+  padding-top: 60px;
+}
+
+/* Container principal para garantir que o footer fique no final */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px; /* Compensa a altura do navbar */
+}
+
+header, .navbar-link, .adopt-button {
+  font-family: 'Arial', sans-serif;
+}
+
+/* Navbar */
+header {
+  background-color: #d7c099; /* Cor do navbar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100px;  /* Altura do navbar */
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* Container do Cabeçalho */
+.header-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin: 0; /* Sem margens extras */
+  padding: 0; /* Sem padding extra */
+}
+
+/* Estilo do logo */
+header .logo {
+  height: 150px; /* Ajuste a altura para um valor adequado */
+  width: auto;  /* Largura automática para manter a proporção */
+  margin-right: 20px; /* Espaço entre o logo e o título */
+}
+
+/* Título do Navbar */
+h1 {
+  font-size: 24px;
+  color: #fff;
+  margin-left: 10px; /* Adiciona espaço entre o logo e o título */
+}
+
+/* Navbar links */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; /* Faz a navbar ocupar o espaço disponível */
+}
+
+/* Navbar links */
+.navbar-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;  /* Remove qualquer margem extra */
+  padding: 0;  /* Remove qualquer padding extra */
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  margin: 0;  /* Remover qualquer margem extra */
+}
+
+.navbar-link:hover {
+  color: #fff;
+  background-color: #8b7d53; /* Cor de fundo no hover */
+  border-radius: 5px;
+}
+
+/* Botão "Quero Adotar" */
+.header-action {
+  margin-left: 20px;
+}
+
+.adopt-button {
+  background-color: #8b7d53;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.adopt-button:hover {
+  background-color: #6d5b3b; /* Cor mais escura no hover */
+  cursor: pointer;
+}
+
+/* Alinhamento do dropdown */
+.navbar .dropdown {
+  position: relative;
+  margin-right: 20px; /* Ajuste o espaçamento entre o dropdown e os itens à direita */
+}
+
+.navbar .dropdown .dropdown-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  padding: 10px 15px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.navbar .dropdown .dropdown-btn:hover {
+  background-color: #8b7d53;
+  color: white;
+}
+
+/* Estilo do menu dropdown */
+.navbar .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f7f3e8;
+  min-width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar .dropdown-menu .dropdown-item {
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+.navbar .dropdown-menu .dropdown-item:hover {
+  background-color: #8b7d53;
+  color: white;
+}
+
+/* Mostrar o menu quando o botão for clicado */
+.navbar .dropdown.show .dropdown-menu {
+  display: block;
+}
+
+
+
+
+
+
+/* Rodapé */
+footer {
+  background-color: #fdf6e4;
+  color: #333;
+  padding: 40px 20px;
+  font-size: 14px;
+  text-align: left;
+  position: relative; /* Não fixo, vai para o fundo da página automaticamente */
+  width: 100%;
+  left: 0; /* Garante que o footer comece da borda esquerda */
+  box-sizing: border-box; /* Inclui o padding na largura */
+  z-index: 1000;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  position: relative;
+  width: 100%; /* Garantir que ocupe toda a largura */
+  box-sizing: border-box; /* Inclui o padding na largura do container */
+}
+
+/* Seções do Rodapé */
+.footer-info, .footer-links, .footer-help, .footer-newsletter {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-info h2, 
+.footer-links h3, 
+.footer-help h3, 
+.footer-newsletter h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.footer-info p {
+  font-size: 14px;
+  color: #555;
+}
+
+.footer-links ul, 
+.footer-help ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li, 
+.footer-help li {
+  margin-bottom: 5px;
+}
+
+.footer-links a, 
+.footer-help a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover, 
+.footer-help a:hover {
+  color: #8b7d53; /* Cor de destaque no hover */
+}
+
+/* Formulário de Inscrição */
+.footer-newsletter form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.footer-newsletter input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  flex-grow: 1;
+}
+
+.footer-newsletter button {
+  background-color: #8b7d53;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.footer-newsletter button:hover {
+  background-color: #6d5b3b;
+}
+
+/* Ícones */
+.footer-icons {
+  position: absolute;
+  bottom: -80px;
+  right: 0;
+  display: flex;
+  gap: 20px;
+  box-sizing: border-box; /* Inclui o padding e border dentro da largura total */
+}
+
+.footer-icons .icon {
+  height: 150px;
+  width: auto;
+  max-width: 100%; /* Garante que a largura dos ícones não ultrapasse a largura do rodapé */
+}
+
+/* Rodapé Inferior */
+.footer-bottom {
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+  margin-top: 40px;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-newsletter input {
+      width: 200px;
+  }
+
+  /* Ajuste da navbar para dispositivos móveis */
+  .navbar-list {
+      flex-direction: column; /* Empilha os itens na versão mobile */
+      gap: 10px; /* Garante que os itens não fiquem colados */
+  }
+
+  header .logo {
+      height: 50px; /* Logo menor em telas pequenas */
+  }
+}
+
+/* Seção de cabeçalho do formulário */
+.resgate-header {
+  background-color: #97A43C; /* Verde da paleta */
+  text-align: center;
+  color: white;
+  border-radius: 10px; /* Bordas arredondadas */
+  margin: 0 auto;
+  width: 100%; /* Faz o cabeçalho ocupar 100% da largura da tela */
+  max-width: 1200px; /* Limita a largura máxima do cabeçalho */
+  box-sizing: border-box; /* Inclui o padding no cálculo da largura total */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+}
+
+/* Ajuste da logo */
+.resgate-logo {
+  width: 150px;
+  height: auto;
+  padding-top: 10px;
+}
+
+/* Ajuste do título e subtítulo */
+.resgate-header h1 {
+  font-size: 2.0rem; /* Ajuste do tamanho da fonte */
+  margin-bottom: 5px; /* Espaço menor abaixo do título */
+  line-height: 1.4; /* Melhora a leitura */
+}
+
+.resgate-header p {
+  font-size: 1.2rem; /* Texto menor */
+  margin: 0; /* Remove margens extras */
+  margin-bottom: 30px; /* Ajuste o espaçamento entre a logo e o título */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .resgate-header {
+    padding: 60px 40px; /* Ajuste do padding para telas menores */
+  }
+
+  .resgate-header h1 {
+    font-size: 1.5rem; /* Ajusta o tamanho da fonte do título */
+  }
+
+  .resgate-header p {
+    font-size: 1.1rem; /* Ajusta o tamanho da fonte do subtítulo */
+  }
+
+  .resgate-logo {
+    width: 60px; /* Reduz a largura da logo */
+  }
+}
+
+/* Seção do formulário */
+.resgate-form-section {
+  background-color: #FFF6DC; /* Amarelo claro da paleta */
+  padding: 30px 80px; /* Aumenta o espaçamento interno */
+  border-radius: 19px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Formulário ocupa 100% da largura */
+  max-width: 800px; /* Diminui a largura máxima do formulário */
+  margin: 20px auto; /* Centraliza horizontalmente a seção */
+  font-family: Arial, sans-serif; /* Define a fonte Arial para todo o formulário */
+}
+
+.resgate-form-section h2 {
+  font-size: 2rem; /* Aumenta o tamanho do título */
+  text-align: center;
+  margin-bottom: 30px; /* Aumenta o espaço abaixo do título */
+}
+
+.resgate-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Maior espaçamento entre campos */
+  font-family: Arial, sans-serif; /* Garante que o formulário use a fonte Arial */
+}
+
+.resgate-form label {
+  font-weight: bold;
+  font-family: Arial, sans-serif; /* Garante que os rótulos usem a fonte Arial */
+}
+
+.resgate-form input,
+.resgate-form textarea {
+  font-family: Arial, sans-serif; /* Garante que os campos de entrada usem a fonte Arial */
+  font-size: 1.2rem; /* Aumenta o tamanho da fonte */
+  padding: 15px; /* Aumenta o padding dos campos */
+  width: 100%; /* Garante que os campos ocupem toda a largura disponível */
+  border-radius: 8px; /* Bordas arredondadas */
+  border: 1px solid #ccc; /* Adiciona uma borda suave */
+}
+
+.resgate-form textarea {
+  resize: vertical; /* Permite apenas redimensionamento vertical */
+}
+
+.resgate-form button {
+  font-family: Arial, sans-serif; /* Garante que o botão use a fonte Arial */
+  font-size: 1.3rem; /* Botão maior */
+  padding: 15px 30px; /* Aumenta o padding do botão */
+  background-color: #97A43C; /* Verde de fundo */
+  color: white;
+  border: none;
+  border-radius: 8px; /* Bordas arredondadas no botão */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.resgate-form button:hover {
+  background-color: #7C8C33; /* Cor mais escura ao passar o mouse */
+}
+
+/* Pré-visualização da foto */
+.resgate-form input[type="file"] {
+  padding: 10px; /* Aumenta o padding do campo de file */
+}
+
+#preview-container {
+  margin-top: 15px; /* Espaço acima da pré-visualização */
+  text-align: center; /* Centraliza a pré-visualização */
+}
+
+#preview-container img {
+  max-width: 100%;
+  max-height: 250px; /* Limita o tamanho da imagem */
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* Seção de imagens */
+.resgate-images-section {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.resgate-images-section h2 {
+  color: #97A43C;
+  margin-bottom: 15px;
+}
+
+.resgate-images {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding-bottom: 50px;
+}
+
+.resgate-images img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .resgate-form-section {
+    padding: 20px; /* Reduz o padding para telas pequenas */
+    max-width: 100%; /* Garante que o formulário ocupe toda a largura em telas pequenas */
+  }
+}

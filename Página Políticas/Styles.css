@@ -1,0 +1,383 @@
+/* Garantir que o corpo da página ocupe 100% da altura da tela e tenha a imagem de fundo */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh; /* Garantir que a altura mínima seja 100% da tela */
+  overflow-x: hidden; /* Impede que o conteúdo ultrapasse a largura da tela */
+  background-image: url(fundo.png); /* Imagem de fundo */
+  background-size: cover; /* Ajusta a imagem para cobrir toda a área da tela */
+  background-position: center; /* Centraliza a imagem de fundo */
+  display: flex;
+  flex-direction: column; /* Alinha os elementos em coluna (header + conteúdo + footer) */
+  padding-top: 20px;  /* Ajuste para garantir que o conteúdo não fique embaixo da navbar */
+}
+
+/* Container principal para garantir que o footer fique no final */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px; /* Compensa a altura do navbar */
+}
+
+header, .navbar-link, .adopt-button {
+  font-family: 'Arial', sans-serif;
+}
+
+/* Navbar */
+header {
+  background-color: #d7c099; /* Cor do navbar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100px;  /* Altura do navbar */
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* Container do Cabeçalho */
+.header-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin: 0; /* Sem margens extras */
+  padding: 0; /* Sem padding extra */
+}
+
+/* Estilo do logo */
+header .logo {
+  height: 150px; /* Ajuste a altura para um valor adequado */
+  width: auto;  /* Largura automática para manter a proporção */
+  margin-right: 20px; /* Espaço entre o logo e o título */
+}
+
+/* Título do Navbar */
+h1 {
+  font-size: 24px;
+  color: #fff;
+  margin-left: 10px; /* Adiciona espaço entre o logo e o título */
+}
+
+/* Navbar links */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; /* Faz a navbar ocupar o espaço disponível */
+}
+
+/* Navbar links */
+.navbar-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;  /* Remove qualquer margem extra */
+  padding: 0;  /* Remove qualquer padding extra */
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  margin: 0;  /* Remover qualquer margem extra */
+}
+
+.navbar-link:hover {
+  color: #fff;
+  background-color: #8b7d53; /* Cor de fundo no hover */
+  border-radius: 5px;
+}
+
+/* Botão "Quero Adotar" */
+.header-action {
+  margin-left: 20px;
+}
+
+.adopt-button {
+  background-color: #8b7d53;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.adopt-button:hover {
+  background-color: #6d5b3b; /* Cor mais escura no hover */
+  cursor: pointer;
+}
+
+/* Alinhamento do dropdown */
+.navbar .dropdown {
+  position: relative;
+  margin-right: 20px; /* Ajuste o espaçamento entre o dropdown e os itens à direita */
+}
+
+.navbar .dropdown .dropdown-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  padding: 10px 15px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.navbar .dropdown .dropdown-btn:hover {
+  background-color: #8b7d53;
+  color: white;
+}
+
+/* Estilo do menu dropdown */
+.navbar .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f7f3e8;
+  min-width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar .dropdown-menu .dropdown-item {
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+.navbar .dropdown-menu .dropdown-item:hover {
+  background-color: #8b7d53;
+  color: white;
+}
+
+/* Mostrar o menu quando o botão for clicado */
+.navbar .dropdown.show .dropdown-menu {
+  display: block;
+}
+
+/* Rodapé */
+footer {
+  background-color: #fdf6e4;
+  color: #333;
+  padding: 40px 20px;
+  font-size: 14px;
+  text-align: left;
+  position: relative; /* Não fixo, vai para o fundo da página automaticamente */
+  width: 100%;
+  left: 0; /* Garante que o footer comece da borda esquerda */
+  box-sizing: border-box; /* Inclui o padding na largura */
+  z-index: 1000;
+  margin-top: 40px; /* Garante que o rodapé não fique colado ao conteúdo */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  position: relative;
+  width: 100%; /* Garantir que ocupe toda a largura */
+  box-sizing: border-box; /* Inclui o padding na largura do container */
+}
+
+/* Seções do Rodapé */
+.footer-info, .footer-links, .footer-help, .footer-newsletter {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-info h2, 
+.footer-links h3, 
+.footer-help h3, 
+.footer-newsletter h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.footer-info p {
+  font-size: 14px;
+  color: #555;
+}
+
+.footer-links ul, 
+.footer-help ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li, 
+.footer-help li {
+  margin-bottom: 5px;
+}
+
+.footer-links a, 
+.footer-help a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover, 
+.footer-help a:hover {
+  color: #8b7d53; /* Cor de destaque no hover */
+}
+
+/* Formulário de Inscrição */
+.footer-newsletter form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.footer-newsletter input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  flex-grow: 1;
+}
+
+.footer-newsletter button {
+  background-color: #8b7d53;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.footer-newsletter button:hover {
+  background-color: #6d5b3b;
+}
+
+/* Ícones */
+.footer-icons {
+  position: absolute;
+  bottom: -80px;
+  right: 0;
+  display: flex;
+  gap: 20px;
+  box-sizing: border-box; /* Inclui o padding e border dentro da largura total */
+}
+
+.footer-icons .icon {
+  height: 150px;
+  width: auto;
+  max-width: 100%; /* Garante que a largura dos ícones não ultrapasse a largura do rodapé */
+}
+
+/* Rodapé inferior */
+.footer-bottom {
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+  margin-top: 40px; /* Espaçamento entre as seções do footer */
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-newsletter input {
+      width: 200px;
+  }
+
+  /* Ajuste da navbar para dispositivos móveis */
+  .navbar-list {
+      flex-direction: column; /* Empilha os itens na versão mobile */
+      gap: 10px; /* Garante que os itens não fiquem colados */
+  }
+
+  header .logo {
+      height: 50px; /* Logo menor em telas pequenas */
+  }
+}
+
+/* Estilo principal do conteúdo da política */
+.privacy-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.9); /* Fundo branco suave */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.privacy-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 30px;
+  font-family: 'Arial', sans-serif;
+}
+
+.privacy-content {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.8;
+  color: #555;
+}
+
+.privacy-content h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.privacy-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Garantir espaçamento adequado entre as seções */
+.privacy-content section {
+  margin-bottom: 30px;
+}
+
+/* Estilo para a data de revisão */
+.revision-date {
+  font-size: 16px;
+  color: #555;
+  text-align: center;
+  margin-bottom: 30px;  /* Espaço entre a data de revisão e o título */
+  font-weight: bold;
+  background-color: #f7f3e8;  /* Cor de fundo suave */
+  padding: 10px 0;
+  border-radius: 5px;
+}

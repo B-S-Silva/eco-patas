@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="Styles.css">
+    <link rel="shortcut icon" href="Ícones/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="header-container">
+        <img src="Ícones/Logo.png" alt="Logo" class="logo">
+        <h1>Eco Patas</h1>
+        <nav class="navbar">
+            <ul class="navbar-list">
+            <li><a href="Página Sobre/Sobre.html" class="navbar-link">Sobre</a></li>
+            <li><a href="Página ONGs/ONGs.html" class="navbar-link">ONGs</a></li>
+            <li class="dropdown">
+                <button class="navbar-link dropdown-btn">Espaços</button>
+                <ul class="dropdown-menu">
+                <li><a href="Página Acompanhamento/Acompanhamento do plantio.html" class="dropdown-item">Acompanhamento do Plantio</a></li>
+
+                <li><a href="Página de Campanhas/Campanhas.html" class="dropdown-item">Campanha de Vacinação</a></li>
+
+                <li><a href="Página Voluntários/Voluntários.html" class="dropdown-item">Voluntários para o Plantio</a></li>
+
+                <li><a href="Página Novidades/Novidades.html" class="dropdown-item">Novidades</a></li>
+                </ul>
+            </li>
+
+            <li><a href="Página de Contato/Contato.html" class="navbar-link">Contato</a></li>
+
+            </ul>
+        </nav>
+
+        <div class="header-action">
+            <a href="Página Quero Adotar/Quero Adotar.html" class="adopt-button">Quero Adotar</a>
+        </div>
+            
+        </div>
+    </header>
+
+    <!-- Seção de Introdução -->
+    <section class="intro">
+        <div class="intro-content">
+            <div class="intro-box">
+                <p class="intro-text">Adote um amigo, plante um futuro.</p>
+                <p class="intro-description">Confira as histórias inspiradoras de quem transformou uma vida ao adotar um animal!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Depoimentos -->
+    <section class="testimonials">
+        <h2>Histórias de Adoção</h2><br>
+        <div class="testimonial-carousel">
+            <div class="carousel-track">
+                <!-- Depoimento 1 -->
+                <div class="testimonial">
+                    <img src="Depoimentos/Suzana.png" alt="Suzana e seu cachorro" class="testimonial-img">
+                </div>
+                <!-- Depoimento 2 -->
+                <div class="testimonial">
+                    <img src="Depoimentos/Carlos.png" alt="Carlos e seu gato" class="testimonial-img">
+                </div>
+                <!-- Depoimento 3 -->
+                <div class="testimonial">
+                    <img src="Depoimentos/Maria.png" alt="Maria e seu gato" class="testimonial-img">
+                </div>
+                <!-- Depoimento 4 -->
+                <div class="testimonial">
+                    <img src="Depoimentos/João.png" alt="João e seu cachorro" class="testimonial-img">
+                </div>
+                <!-- Depoimento 5 -->
+                <div class="testimonial">
+                    <img src="Depoimentos/Anna.png" alt="Ana e seu gato" class="testimonial-img">
+                </div>
+                <!-- Depoimento 6 -->
+                <div class="testimonial">
+                    <img src="Depoimentos/Ivanildo.png" alt="Ivanildo e seu cachorro" class="testimonial-img">
+                </div>
+                <!-- Depoimento 7 -->
+                <div class="testimonial">
+                    <img src="Depoimentos/Letícia.png" alt="Letícia e seu gato" class="testimonial-img">
+                </div>
+            </div>
+
+            <!-- Controles de navegação (bolinhas) -->
+            <div class="carousel-indicators">
+                <span class="indicator" data-index="0"></span>
+                <span class="indicator" data-index="1"></span>
+                <span class="indicator" data-index="2"></span>
+                <span class="indicator" data-index="3"></span>
+                <span class="indicator" data-index="4"></span>
+                <span class="indicator" data-index="5"></span>
+                <span class="indicator" data-index="6"></span>
+            </div>
+
+            <!-- Botões de navegação -->
+            <button class="carousel-btn prev-btn">←</button>
+            <button class="carousel-btn next-btn">→</button>
+        </div>
+    </section>
+
+
+    <section class="adoption-section">
+        <h2>Venha ver seu futuro amigo 🐾</h2>
+        <div class="categories">
+            <button class="category-btn active" onclick="filterAnimals('dogs')">Cães</button>
+            <button class="category-btn" onclick="filterAnimals('cats')">Gatos</button>
+        </div>
+    
+        <section>
+            <div class="animals-grid">
+                <!-- Cards dos Cachorros -->
+                <div class="animal-card dogs">
+                    <a href="Página Quero Adotar/Quero Adotar.html" target="_blank" class="card-link">
+                        <img src="Dogs/Dartaña.png" alt="Dartaña">
+                    </a>
+                    <div class="card-details">
+                        <h3>Dartaña</h3>
+                        <p>Forte e protetor</p>
+                    </div>
+                </div>
+
+                <div class="animal-card dogs">
+                    <a href="Página Quero Adotar/Quero Adotar.html" target="_blank" class="card-link">
+                        <img src="Dogs/Lola.png" alt="Lola">
+                    </a>
+                    <div class="card-details">
+                        <h3>Lola</h3>
+                        <p>Alegre e brincalhona</p>
+                    </div>
+                </div>
+
+                <div class="animal-card dogs">
+                    <a href="Página Quero Adotar/Quero Adotar.html" target="_blank" class="card-link">
+                        <img src="Dogs/Bella.png" alt="Bella">
+                    </a>
+                    <div class="card-details">
+                        <h3>Bella</h3>
+                        <p>Esperta e leal</p>
+                    </div>
+                </div>
+
+                <div class="animal-card dogs">
+                    <a href="Página Quero Adotar/Quero Adotar.html" target="_blank" class="card-link">
+                        <img src="Dogs/Lúbac.png" alt="Lúbac">
+                    </a>
+                    <div class="card-details">
+                        <h3>Lúbac</h3>
+                        <p>Companheiro e fiel</p>
+                    </div>
+                </div>
+
+                <div class="animal-card dogs">
+                    <a href="Página Quero Adotar/Quero Adotar.html" target="_blank" class="card-link">
+                        <img src="Dogs/Shown.png" alt="Shown">
+                    </a>
+                    <div class="card-details">
+                        <h3>Shown</h3>
+                        <p>Cheio de energia</p>
+                    </div>
+                </div>
+
+                <div class="animal-card dogs">
+                    <a href="Página Quero Adotar/Quero Adotar.html" target="_blank" class="card-link">
+                        <img src="Dogs/Zoe.png" alt="Zoe">
+                    </a>
+                    <div class="card-details">
+                        <h3>Zoe</h3>
+                        <p>Carinhosa e dócil</p>
+                    </div>
+                </div>
+        
+                <!-- Cards dos Gatos -->
+                <div class="animal-card cats hidden">
+                    <a href="Página Quero Adotar/Quero Adotar.html" target="_blank" class="card-link">
+                        <img src="Cats/Lião.png" alt="Lião">
+                    </a>
+                    <div class="card-details">
+                        <h3>Lião</h3>
+                        <p>Curioso e cheio de energia</p>
+                    </div>
+                </div>
+
+                <div class="animal-card cats hidden">
+                    <a href="Página Quero Adotar/Quero Adotar.html" target="_blank" class="card-link">
+                        <img src="Cats/Oliver.png" alt="Oliver">
+                    </a>
+                    <div class="card-details">
+                        <h3>Oliver</h3>
+                        <p>Um aventureiro nato</p>
+                    </div>
+                </div>
+
+                <div class="animal-card cats hidden">
+                    <a href="Página Quero Adotar/Quero Adotar.html" target="_blank" class="card-link">
+                        <img src="Cats/Luna.png" alt="Luna">
+                    </a>
+                    <div class="card-details">
+                        <h3>Luna</h3>
+                        <p>Meiga e tranquila</p>
+                    </div>
+                </div>
+
+                <div class="animal-card cats hidden">
+                    <a href="Página Quero Adotar/Quero Adotar.html" target="_blank" class="card-link">
+                        <img src="Cats/Simba.png" alt="Simba">
+                    </a>
+                    <div class="card-details">
+                        <h3>Simba</h3>
+                        <p>Cheio de charme</p>
+                    </div>
+                </div>
+
+                <div class="animal-card cats hidden">
+                    <a href="Página Quero Adotar/Quero Adotar.html" target="_blank" class="card-link">
+                        <img src="Cats/Chloe.png" alt="Chloe">
+                    </a>
+                    <div class="card-details">
+                        <h3>Chloe</h3>
+                        <p>Independente e amorosa</p>
+                    </div>
+                </div>
+
+                <div class="animal-card cats hidden">
+                    <a href="Página Quero Adotar/Quero Adotar.html" target="_blank" class="card-link">
+                        <img src="Cats/Leo.png" alt="Leo">
+                    </a>
+                    <div class="card-details">
+                        <h3>Leo</h3>
+                        <p>Destemido e brincalhão</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+        
+    <!-- Seção de Ações -->
+    <section class="actions">
+        <div class="action">
+            <a href="Página Quero Adotar/Quero Adotar.html" class="action-link">
+                <i class="fas fa-heart"></i>
+                <span>Quero adotar</span>
+            </a>
+        </div>
+        <div class="action">
+            <a href="Página Voluntários/Voluntários.html" class="action-link">
+                <i class="fas fa-hands-helping"></i>
+                <span>Voluntário</span>
+            </a>
+        </div>
+        <div class="action">
+            <a href="Página de Resgate/Resgate.html" class="action-link">
+                <i class="fas fa-ambulance"></i>
+                <span>Resgate</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-container">
+        <!-- Informações da ONG -->
+        <div class="footer-info">
+            <h2>Eco Patas</h2>
+            <p>Av. Águia de Haia, 2633 - Cidade Antônio Estêvão de Carvalho, São Paulo - SP, 03694-000</p>
+
+            <h3>E-mail</h3>
+            <p>ecopatas.ong@gmail.com</p>
+
+            <h3>Telefone</h3>
+            <p>+55 (11) 9 1234-5678</p>
+        </div>
+
+        <!-- Links -->
+        <div class="footer-links">
+            <h3>Links</h3>
+            <ul>
+            <li><a href="Página de Resgate/Resgate.html">Resgate</a></li>
+
+            <li><a href="Página de Campanhas/Campanhas.html">Vacinação</a></li>
+
+            <li><a href="Página Voluntários/Voluntários.html">Voluntários</a></li>
+
+            <li><a href="Página Novidades/novidades.html">Novidades</a></li>
+
+            <li><a href="Página Sobre/Sobre.html">Sobre</a></li>
+            </ul>
+        </div>
+
+        <!-- Ajuda -->
+        <div class="footer-help">
+            <h3>Ajuda</h3>
+            <ul>
+            <li><a href="Página de Devolução/Devolução.html">Devolução</a></li>
+            <li><a href="Página Políticas/Políticas de Privacidade.html">Políticas de Privacidade</a></li>
+            </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer-newsletter">
+            <h3>Newsletter</h3>
+            <form action="Página Novidades/Novidades.html" method="get">
+                <input type="email" placeholder="Digite seu e-mail" required>
+                <button type="submit">Inscreva-se</button>
+            </form>
+        </div>
+
+        <!-- Ícones -->
+        <div class="footer-icons">
+            <img src="Ícones/dog-icon.png" alt="Ícone de cachorro" class="icon">
+            <img src="Ícones/cat-icon.png" alt="Ícone de gato" class="icon">
+        </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>2024 Eco Patas. Todos os direitos reservados.</p>
+        </div>
+
+    </footer>
+
+    <script src="Scripts.js"></script>
+</body>
+
+</html>

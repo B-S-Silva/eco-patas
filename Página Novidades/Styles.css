@@ -1,0 +1,642 @@
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&family=Sigmar&display=swap');
+
+/* Garantir que o corpo da página ocupe 100% da altura da tela e tenha a imagem de fundo */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh; /* Garantir que a altura mínima seja 100% da tela */
+  overflow-x: hidden; /* Impede que o conteúdo ultrapasse a largura da tela */
+  background-image: url(fundo.png); /* Imagem de fundo */
+  background-size: cover; /* Ajusta a imagem para cobrir toda a área da tela */
+  background-position: center; /* Centraliza a imagem de fundo */
+  display: flex;
+  flex-direction: column; /* Alinha os elementos em coluna (header + conteúdo + footer) */
+  padding-top: 50px;
+}
+
+/* Container principal para garantir que o footer fique no final */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px; /* Compensa a altura do navbar */
+}
+
+header, .navbar-link, .adopt-button {
+  font-family: 'Arial', sans-serif;
+}
+
+/* Navbar */
+header {
+  background-color: #d7c099; /* Cor do navbar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100px;  /* Altura do navbar */
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* Container do Cabeçalho */
+.header-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin: 0; /* Sem margens extras */
+  padding: 0; /* Sem padding extra */
+}
+
+/* Estilo do logo */
+header .logo {
+  height: 150px; /* Ajuste a altura para um valor adequado */
+  width: auto;  /* Largura automática para manter a proporção */
+  margin-right: 20px; /* Espaço entre o logo e o título */
+}
+
+/* Título do Navbar */
+h1 {
+  font-size: 24px;
+  color: #fff;
+  margin-left: 10px; /* Adiciona espaço entre o logo e o título */
+}
+
+/* Navbar links */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; /* Faz a navbar ocupar o espaço disponível */
+}
+
+/* Navbar links */
+.navbar-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;  /* Remove qualquer margem extra */
+  padding: 0;  /* Remove qualquer padding extra */
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  margin: 0;  /* Remover qualquer margem extra */
+}
+
+.navbar-link:hover {
+  color: #fff;
+  background-color: #8b7d53; /* Cor de fundo no hover */
+  border-radius: 5px;
+}
+
+/* Botão "Quero Adotar" */
+.header-action {
+  margin-left: 20px;
+}
+
+.adopt-button {
+  background-color: #8b7d53;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.adopt-button:hover {
+  background-color: #6d5b3b; /* Cor mais escura no hover */
+  cursor: pointer;
+}
+
+/* Alinhamento do dropdown */
+.navbar .dropdown {
+  position: relative;
+  margin-right: 20px; /* Ajuste o espaçamento entre o dropdown e os itens à direita */
+}
+
+.navbar .dropdown .dropdown-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  padding: 10px 15px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.navbar .dropdown .dropdown-btn:hover {
+  background-color: #8b7d53;
+  color: white;
+}
+
+/* Estilo do menu dropdown */
+.navbar .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f7f3e8;
+  min-width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar .dropdown-menu .dropdown-item {
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+.navbar .dropdown-menu .dropdown-item:hover {
+  background-color: #8b7d53;
+  color: white;
+}
+
+/* Mostrar o menu quando o botão for clicado */
+.navbar .dropdown.show .dropdown-menu {
+  display: block;
+}
+
+
+
+
+
+
+/* Rodapé */
+footer {
+  background-color: #fdf6e4;
+  color: #333;
+  padding: 40px 20px;
+  font-size: 14px;
+  text-align: left;
+  position: relative; /* Não fixo, vai para o fundo da página automaticamente */
+  width: 100%;
+  left: 0; /* Garante que o footer comece da borda esquerda */
+  box-sizing: border-box; /* Inclui o padding na largura */
+  z-index: 1000;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  position: relative;
+  width: 100%; /* Garantir que ocupe toda a largura */
+  box-sizing: border-box; /* Inclui o padding na largura do container */
+}
+
+/* Seções do Rodapé */
+.footer-info, .footer-links, .footer-help, .footer-newsletter {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-info h2, 
+.footer-links h3, 
+.footer-help h3, 
+.footer-newsletter h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.footer-info p {
+  font-size: 14px;
+  color: #555;
+}
+
+.footer-links ul, 
+.footer-help ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li, 
+.footer-help li {
+  margin-bottom: 5px;
+}
+
+.footer-links a, 
+.footer-help a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover, 
+.footer-help a:hover {
+  color: #8b7d53; /* Cor de destaque no hover */
+}
+
+/* Formulário de Inscrição */
+.footer-newsletter form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.footer-newsletter input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  flex-grow: 1;
+}
+
+.footer-newsletter button {
+  background-color: #8b7d53;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.footer-newsletter button:hover {
+  background-color: #6d5b3b;
+}
+
+/* Ícones */
+.footer-icons {
+  position: absolute;
+  bottom: -80px;
+  right: 0;
+  display: flex;
+  gap: 20px;
+  box-sizing: border-box; /* Inclui o padding e border dentro da largura total */
+}
+
+.footer-icons .icon {
+  height: 150px;
+  width: auto;
+  max-width: 100%; /* Garante que a largura dos ícones não ultrapasse a largura do rodapé */
+}
+
+/* Rodapé Inferior */
+.footer-bottom {
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+  margin-top: 40px;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-newsletter input {
+      width: 200px;
+  }
+
+  /* Ajuste da navbar para dispositivos móveis */
+  .navbar-list {
+      flex-direction: column; /* Empilha os itens na versão mobile */
+      gap: 10px; /* Garante que os itens não fiquem colados */
+  }
+
+  header .logo {
+      height: 50px; /* Logo menor em telas pequenas */
+  }
+}
+
+/* Estilo dos Botões */
+.buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn-light, .btn-dark {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-light {
+  background-color: #f0e4d1;
+  color: #333;
+}
+
+.btn-dark {
+  background-color: #a5845b;
+  color: #fff;
+}
+
+.btn-light:hover {
+  background-color: #e8d2bb;
+}
+
+.btn-dark:hover {
+  background-color: #8b6e46;
+}
+
+
+.logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .grid {
+      grid-template-columns: 1fr;
+  }
+
+  .card.destaque {
+      grid-column: span 1;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.novidades-recentes {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.novidades-recentes h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #A28F58;
+  background-color: #E4D6B6;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+}
+
+.card-grande {
+  flex: 2;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-pequeno {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-grande img,
+.card-pequeno img {
+  width: 100%;
+  height: auto;
+}
+
+.conteudo {
+  padding: 15px;
+}
+
+.autor {
+  font-size: 14px;
+  color: #6b5b95;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+}
+
+.tags span {
+  font-size: 12px;
+  color: #666;
+  background-color: #e0e0e0;
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+  .cards {
+      flex-direction: column;
+  }
+  
+  .card-grande,
+  .card-pequeno {
+      flex: 1;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.novidades-recentes, .todas-novidades {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.todas-novidades h2 {
+                   
+  font-size: 28px;
+  font-weight: bold;
+  color: #A28F58;
+  background-color: #E4D6B6;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 200px; /* Define uma altura fixa */
+  object-fit: cover; /* Faz a imagem preencher o espaço sem distorção */
+  display: block; /* Remove espaços indesejados causados por imagens como elementos inline */
+}
+
+
+.conteudo {
+  padding: 15px;
+}
+
+.autor {
+  font-size: 14px;
+  color: #6b5b95;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+}
+
+.tags span {
+  font-size: 12px;
+  color: #666;
+  background-color: #e0e0e0;
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+
+
+@media (max-width: 768px) {
+  .grid-cards {
+      grid-template-columns: 1fr;
+  }
+}
+
+
+      /* Estilo do banner */
+      .banner-bacana {
+          background-color: #798c32; /* Fundo principal: verde */
+          color: #f3ebc4; /* Texto em tom creme claro */
+          text-align: center;
+          padding: 60px 20px; /* Aumentado para mais destaque */
+          font-family: 'Shrikhand', cursive;
+          border-radius: 15px;
+          margin: 30px auto;
+          max-width: 100%; /* Ligeiramente mais largo */
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais marcante */
+          position: relative;
+          overflow: hidden;
+      }
+
+      .banner-bacana h1 {
+          font-size: 3rem; /* Aumentado para maior impacto */
+          margin-bottom: 15px;
+      }
+
+      .banner-bacana p {
+          font-size: 1.5rem; /* Subtítulo também ampliado */
+          margin: 0;
+          color: #ebf2ae; /* Subtítulo com tom amarelo claro */
+      }
+
+      /* Elemento decorativo */
+      .banner-bacana::before {
+          content: '';
+          position: absolute;
+          top: -70px; /* Ajustado para maior proporção */
+          left: -70px;
+          width: 200px;
+          height: 200px;
+          background: #ebf2ae; /* Amarelo claro */
+          border-radius: 50%;
+          opacity: 0.2;
+          z-index: 1;
+      }
+
+      .banner-bacana::after {
+          content: '';
+          position: absolute;
+          bottom: -70px; /* Ajustado para maior proporção */
+          right: -70px;
+          width: 200px;
+          height: 200px;
+          background: #f3ebc4; /* Creme */
+          border-radius: 50%;
+          opacity: 0.2;
+          z-index: 1;
+      }
+
+      .banner-content {
+          position: relative;
+          z-index: 2;
+      }
+
+      

@@ -1,0 +1,738 @@
+/* Garantir que o corpo da página ocupe 100% da altura da tela e tenha a imagem de fundo */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh; /* Garantir que a altura mínima seja 100% da tela */
+    overflow-x: hidden; /* Impede que o conteúdo ultrapasse a largura da tela */
+    background-image: url(fundo.png); /* Imagem de fundo */
+    background-size: cover; /* Ajusta a imagem para cobrir toda a área da tela */
+    background-position: center; /* Centraliza a imagem de fundo */
+    display: flex;
+    flex-direction: column; /* Alinha os elementos em coluna (header + conteúdo + footer) */
+}
+
+/* Container principal para garantir que o footer fique no final */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px; /* Compensa a altura do navbar */
+}
+
+header, .navbar-link, .adopt-button {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navbar */
+header {
+    background-color: #d7c099; /* Cor do navbar */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100px;  /* Altura do navbar */
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+/* Container do Cabeçalho */
+.header-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin: 0; /* Sem margens extras */
+    padding: 0; /* Sem padding extra */
+}
+
+/* Estilo do logo */
+header .logo {
+    height: 150px; /* Ajuste a altura para um valor adequado */
+    width: auto;  /* Largura automática para manter a proporção */
+    margin-right: 20px; /* Espaço entre o logo e o título */
+}
+
+/* Título do Navbar */
+h1 {
+    font-size: 24px;
+    color: #fff;
+    margin-left: 10px; /* Adiciona espaço entre o logo e o título */
+}
+
+/* Navbar links */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Faz a navbar ocupar o espaço disponível */
+}
+
+/* Navbar links */
+.navbar-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;  /* Remove qualquer margem extra */
+    padding: 0;  /* Remove qualquer padding extra */
+}
+  
+.navbar-link {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    margin: 0;  /* Remover qualquer margem extra */
+}
+  
+.navbar-link:hover {
+    color: #fff;
+    background-color: #8b7d53; /* Cor de fundo no hover */
+    border-radius: 5px;
+}
+  
+/* Botão "Quero Adotar" */
+.header-action {
+    margin-left: 20px;
+}
+
+.adopt-button {
+    background-color: #8b7d53;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.adopt-button:hover {
+    background-color: #6d5b3b; /* Cor mais escura no hover */
+    cursor: pointer;
+}
+  
+/* Alinhamento do dropdown */
+.navbar .dropdown {
+    position: relative;
+    margin-right: 20px; /* Ajuste o espaçamento entre o dropdown e os itens à direita */
+}
+  
+.navbar .dropdown .dropdown-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    padding: 10px 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+  
+.navbar .dropdown .dropdown-btn:hover {
+    background-color: #8b7d53;
+    color: white;
+}
+  
+/* Estilo do menu dropdown */
+.navbar .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f7f3e8;
+    min-width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 1000;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+  
+.navbar .dropdown-menu .dropdown-item {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    display: block;
+}
+  
+.navbar .dropdown-menu .dropdown-item:hover {
+    background-color: #8b7d53;
+    color: white;
+}
+  
+/* Mostrar o menu quando o botão for clicado */
+.navbar .dropdown.show .dropdown-menu {
+    display: block;
+}
+
+/* Seção de Introdução */
+.intro {
+    padding: 3rem 1.5rem;
+    background-image: url('Ícones/Pata-Coração.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    background-color: transparent; /* Remover fundo para a imagem ser visível */
+    padding-top: 120px;  /* Espaçamento superior para compensar a altura do navbar */
+    margin-top: 100px;   /* Garante que a introdução comece abaixo do navbar fixo */
+}
+
+/* Remover fundo colorido de outros elementos */
+.intro, .testimonials, .adoption-section, .about-image-section {
+    background-color: transparent; /* Remover fundo colorido para permitir que a imagem de fundo apareça */
+}
+
+/* Seção de Introdução */
+.intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.intro-box {
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semitransparente para garantir legibilidade */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 2rem; /* Espaçamento interno para o texto */
+    display: inline-block; /* Faz a "plaquinha" não ocupar toda a largura */
+    max-width: 90%; /* Limita a largura da plaquinha */
+    margin: 0 auto; /* Centraliza o conteúdo */
+}
+
+/* Título da introdução */
+.intro-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #6e512a;
+    margin-bottom: 1rem;
+}
+
+/* Descrição da introdução */
+.intro-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .intro-text {
+        font-size: 2rem;
+    }
+
+    .intro-description {
+        font-size: 1rem;
+    }
+}
+
+/* Estilo para a seção de imagem com quadro de texto */
+.about-image-section {
+    position: relative; /* Para que o quadro de texto possa ser posicionado em relação à imagem */
+}
+
+.about-image {
+    width: 100%; /* A imagem ocupa toda a largura da tela */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+.about-text-container {
+    position: absolute; /* Para posicionar o quadro de texto sobre a imagem */
+    top: 10%; /* Coloca o quadro um pouco abaixo do topo da imagem */
+    left: 5%; /* Deixa um pequeno espaço na esquerda */
+    width: 40%; /* Define a largura do quadro de texto */
+    background-color: rgba(168, 31, 31, 0.8); /* Fundo branco com leve transparência */
+    padding: 20px; /* Espaço interno para o texto */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+.about-text-box {
+    color: #333;
+}
+
+.about-text-box h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.about-text-box p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.about-link {
+    display: inline-block;
+    background-color: #8b7d53; /* Cor de fundo */
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.about-link:hover {
+    background-color: #6d5b3b; /* Cor mais escura no hover */
+}
+
+/* Estilo do Carrossel */
+.testimonials {
+    text-align: center;
+    padding: 2rem;
+}
+
+.testimonial-carousel {
+    width: 80%; /* Ajuste a largura conforme necessário */
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Faz com que o conteúdo (carrossel e bolinhas) fiquem empilhados verticalmente */
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.1s ease-in-out; /* Transição suave entre os slides */
+}
+
+.testimonial {
+    flex-shrink: 0;
+    width: 100%; /* Cada slide ocupa 100% da largura do carrossel */
+}
+
+.testimonial-img {
+    width: 100%; /* Imagem ocupa toda a largura do slide */
+    height: auto;
+    border-radius: 10px; /* Borda arredondada, se necessário */
+}
+
+/* Estilo dos botões */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-btn.prev-btn {
+    left: 10px;
+}
+
+.carousel-btn.next-btn {
+    right: 10px;
+}
+
+/* Estilo para as bolinhas de navegação */
+.carousel-indicators {
+    text-align: center;
+    margin-top: 10px; /* Deixa um pequeno espaço entre o carrossel e as bolinhas */
+    padding: 10px 0;
+}
+
+.indicator {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: #333;
+}
+
+.adoption-section {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.adoption-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #6e512a;
+}
+
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.category-btn {
+    background-color: #e4c29c;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #6e512a;
+}
+
+.category-btn.active {
+    background-color: #d9925d;
+}
+
+.animals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajusta o tamanho mínimo das colunas */
+    gap: 1.5rem;
+    height: auto;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap; /* Garante que os cards não quebrem para a linha de baixo */
+    gap: 10px; /* Espaço entre os cards */
+    margin: 0 auto; /* Centraliza os cards */
+    width: 100%; /* A largura total da tela será usada */
+    max-width: 1200px; /* Garante que a largura dos cards não ultrapasse 1200px */
+    overflow-x: auto; /* Permite rolagem horizontal caso a largura total ultrapasse a tela */
+}
+
+.animals-grid {
+    display: flex;
+    flex-wrap: nowrap; /* Garante que os cards não quebrem para a linha de baixo */
+    gap: 10px; /* Espaço entre os cards */
+    width: 100%; /* Para que ocupe toda a largura */
+    max-width: 1200px; /* Garante que os cards não fiquem muito grandes */
+    margin: 0 auto; /* Centraliza os cards */
+}
+
+.animal-card {
+    display: flex;
+    flex-direction: column;
+    width: 16.66%;
+    flex: 0 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: #ffffff; /* Cor de fundo branca */
+}
+
+.animal-card img {
+    width: 100%; /* A imagem ocupa toda a largura do card */
+    height: 80%; /* A imagem ocupa 80% da altura */
+    object-fit: cover; /* Faz com que a imagem cubra a área sem distorcer */
+}
+
+.animal-card h3, .animal-card p {
+    padding: 0 10px;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Garante que o nome e a descrição fiquem em uma coluna */
+    justify-content: flex-start; /* Alinha o texto ao topo do espaço disponível */
+    align-items: center; /* Garante que o conteúdo fique centralizado horizontalmente */
+    flex-grow: 1; /* Permite que o texto ocupe o espaço restante */
+    overflow: hidden; /* Impede que o conteúdo transborde */
+}
+
+.animal-card h3 {
+    font-size: 1.1em; /* Ajuste no tamanho do nome */
+    margin-bottom: 0.3em; /* Espaço entre o nome e a descrição */
+}
+
+.animal-card p {
+    font-size: 0.9em; /* Ajuste no tamanho da descrição */
+    margin-top: 0; /* Remover o espaço extra superior */
+}
+
+/* Para garantir que o link ocupe toda a área da imagem */
+.animal-card a.card-link {
+    display: block;
+    width: 100%;
+    height: 80%;
+}
+
+/* Para evitar que o layout quebre com o zoom e manter os 6 cards na linha */
+.animals-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.animals-grid .animal-card {
+    flex: 1 1 calc(16.66% - 10px); /* Cada card ocupa 1/6 da largura */
+    margin-bottom: 20px; /* Adiciona espaçamento inferior entre os cards */
+}
+
+/* Estilizando links para não ter sublinhado */
+a {
+    text-decoration: none;
+}
+
+/* Responsividade para garantir que em telas pequenas os cards se ajustem */
+@media (max-width: 900px) {
+    .animal-card {
+        width: calc(33.33% - 10px); /* Ajusta a largura dos cards para 3 por linha */
+    }
+}
+
+@media (max-width: 600px) {
+    .animal-card {
+        width: calc(50% - 10px); /* Ajusta a largura dos cards para 2 por linha */
+    }
+}
+
+@media (max-width: 400px) {
+    .animal-card {
+        width: 100%; /* 1 card por linha em telas muito pequenas */
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+/* Estilo geral para a seção de ações */
+.actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    margin-bottom: 80px; /* Mais espaço para o footer */
+    gap: 20px; /* Espaço entre os itens */
+}
+
+/* Cada ação */
+.action {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 150px; /* Largura do círculo */
+    height: 150px; /* Altura do círculo */
+    background-color: #f9f9f9; /* Fundo suave */
+    border-radius: 50%; /* Torna o quadro circular */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação de hover */
+}
+
+/* Efeito de hover no círculo */
+.action:hover {
+    transform: translateY(-10px); /* Eleva o círculo */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
+}
+
+/* Estilo para o link da ação */
+.action-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 1em;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Preenche o círculo */
+    width: 100%; /* Preenche o círculo */
+}
+
+/* Ícones */
+.action-link i {
+    font-size: 2em; /* Tamanho do ícone */
+    margin-bottom: 10px;
+    color: #3498db; /* Cor inicial do ícone */
+    transition: color 0.3s ease, transform 0.3s ease; /* Animação suave */
+}
+
+/* Texto */
+.action-link span {
+    font-size: 1em;
+}
+
+/* Efeito de hover nos ícones */
+.action-link:hover i {
+    color: #2ecc71; /* Cor do ícone quando o usuário passa o mouse */
+    transform: scale(1.1); /* Leve aumento do tamanho do ícone */
+}
+
+.action-link:hover span {
+    color: #2ecc71; /* Cor do texto quando o usuário passa o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .action {
+        width: 120px; /* Ajusta o tamanho para dispositivos menores */
+        height: 120px;
+        margin-bottom: 20px; /* Espaço entre os itens */
+    }
+}
+
+/* Rodapé */
+footer {
+    background-color: #fdf6e4;
+    color: #333;
+    padding: 40px 20px;
+    font-size: 14px;
+    text-align: left;
+    position: relative; /* Não fixo, vai para o fundo da página automaticamente */
+    width: 100%;
+    left: 0; /* Garante que o footer comece da borda esquerda */
+    box-sizing: border-box; /* Inclui o padding na largura */
+    z-index: 1000;
+}
+  
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: relative;
+    width: 100%; /* Garantir que ocupe toda a largura */
+    box-sizing: border-box; /* Inclui o padding na largura do container */
+}
+  
+/* Seções do Rodapé */
+.footer-info, .footer-links, .footer-help, .footer-newsletter {
+    flex: 1;
+    min-width: 200px;
+}
+  
+.footer-info h2, 
+.footer-links h3, 
+.footer-help h3, 
+.footer-newsletter h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+  
+.footer-info p {
+    font-size: 14px;
+    color: #555;
+}
+  
+.footer-links ul, 
+.footer-help ul {
+    list-style: none;
+    padding: 0;
+}
+  
+.footer-links li, 
+.footer-help li {
+    margin-bottom: 5px;
+}
+  
+.footer-links a, 
+.footer-help a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+  
+.footer-links a:hover, 
+.footer-help a:hover {
+    color: #8b7d53; /* Cor de destaque no hover */
+}
+  
+/* Formulário de Inscrição */
+.footer-newsletter form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+  
+.footer-newsletter input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex-grow: 1;
+}
+  
+.footer-newsletter button {
+    background-color: #8b7d53;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+  
+.footer-newsletter button:hover {
+    background-color: #6d5b3b;
+}
+  
+/* Ícones */
+.footer-icons {
+    position: absolute;
+    bottom: -80px;
+    right: 0;
+    display: flex;
+    gap: 20px;
+    box-sizing: border-box; /* Inclui o padding e border dentro da largura total */
+}
+  
+.footer-icons .icon {
+    height: 150px;
+    width: auto;
+    max-width: 100%; /* Garante que a largura dos ícones não ultrapasse a largura do rodapé */
+}
+  
+/* Rodapé Inferior */
+.footer-bottom {
+    text-align: center;
+    font-size: 12px;
+    color: #555;
+    margin-top: 40px;
+}
+  
+.footer-bottom p {
+    margin: 0;
+}
+  
+/* Responsividade */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-newsletter input {
+        width: 200px;
+    }
+  
+    /* Ajuste da navbar para dispositivos móveis */
+    .navbar-list {
+        flex-direction: column; /* Empilha os itens na versão mobile */
+        gap: 10px; /* Garante que os itens não fiquem colados */
+    }
+  
+    header .logo {
+        height: 50px; /* Logo menor em telas pequenas */
+    }
+}

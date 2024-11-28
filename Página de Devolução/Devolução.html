@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devolução do Pet</title>
+    <link rel="stylesheet" href="Styles.css">
+    <link rel="shortcut icon" href="Ícones/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <div class="header-container">
+      <img src="Ícones/Logo.png" alt="Logo" class="logo">
+      <h1>Eco Patas</h1>
+      <nav class="navbar">
+          <ul class="navbar-list">
+          <li><a href="../Home.html" class="navbar-link">Home</a></li>
+          <li><a href="../Página ONGs/ONGs.html" class="navbar-link">ONGs</a></li>
+          <li class="dropdown">
+              <button class="navbar-link dropdown-btn">Espaços</button>
+              <ul class="dropdown-menu">
+              <li><a href="../Página Acompanhamento/Acompanhamento do plantio.html" class="dropdown-item">Acompanhamento do Plantio</a></li>
+
+              <li><a href="../Página de Campanhas/Campanhas.html" class="dropdown-item">Campanha de Vacinação</a></li>
+
+              <li><a href="../Página Voluntários/Voluntários.html" class="dropdown-item">Voluntários para o Plantio</a></li>
+
+              <li><a href="../Página Novidades/Novidades.html" class="dropdown-item">Novidades</a></li>
+              </ul>
+          </li>
+
+          <li><a href="../Página de Contato/Contato.html" class="navbar-link">Contato</a></li>
+
+          </ul>
+      </nav>
+
+      <div class="header-action">
+          <a href="../Página Quero Adotar/Quero Adotar.html" class="adopt-button">Quero Adotar</a>
+      </div>
+        
+    </div>
+  </header>
+
+    <main>
+
+        <div class="message-container">
+            <p class="message-text">
+                Na Eco Patas, compreendemos que a decisão de devolver um pet pode ser desafiadora, e queremos que saiba que estamos aqui para acolher seu companheiro com todo o cuidado e carinho que ele merece. Independentemente do motivo, nossa prioridade é garantir o bem-estar dos nossos animais. Esperamos que, em um futuro próximo, você considere novamente abrir seu coração e sua casa para um dos nossos pets, oferecendo a ele um lar cheio de amor e carinho.
+            </p>
+        </div>
+
+        <section class="form-container">
+            <div class="image-row">
+                <!-- Ícones representando a ação de devolução -->
+                <div class="icon-placeholder"><i class="fas fa-undo"></i></div>
+                <div class="icon-placeholder"><i class="fas fa-paw"></i></div>
+                <div class="icon-placeholder"><i class="fas fa-heart-broken"></i></div>
+            </div>
+        
+            <h2 class="center">Devolução do Pet</h2>
+        
+            <p class="alert"> 
+                <i class="fas fa-exclamation-circle"></i>
+                <span class="alert-text">
+                    <strong>Atenção:</strong> Este formulário é para a devolução de pets adotados anteriormente. 
+                    Por favor, preencha todos os campos corretamente.
+                </span>
+            </p>
+        
+            <form id="returnForm">
+                <fieldset>
+                    <legend>Dados do Responsável</legend>
+                    <label for="nomeResponsavel">Nome completo</label>
+                    <input type="text" id="nomeResponsavel" name="nomeResponsavel" placeholder="Digite seu nome completo" required>
+                
+                    <label for="cpfResponsavel">CPF</label>
+                    <input type="text" id="cpfResponsavel" name="cpfResponsavel" placeholder="Digite seu CPF" required>
+                
+                    <label for="dataNascimentoResponsavel">Data de nascimento</label>
+                    <input type="date" id="dataNascimentoResponsavel" name="dataNascimentoResponsavel" required>
+                
+                    <label for="emailResponsavel">E-mail</label>
+                    <input type="email" id="emailResponsavel" name="emailResponsavel" placeholder="Digite seu e-mail" required>
+                
+                    <label for="telefoneResponsavel">Telefone</label>
+                    <input type="tel" id="telefoneResponsavel" name="telefoneResponsavel" placeholder="Digite seu telefone">
+                
+                    <label for="celularResponsavel">Celular</label>
+                    <input type="tel" id="celularResponsavel" name="celularResponsavel" placeholder="Digite seu celular">
+                </fieldset>
+            
+                <fieldset>
+                    <legend>Informações sobre a Devolução</legend>
+                    
+                    <div class="form-group">
+                        <label for="dataDevolucao">Data da Devolução</label>
+                        <input type="date" id="dataDevolucao" name="dataDevolucao" required>
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="motivoDevolucao">Motivo da Devolução</label>
+                        <textarea id="motivoDevolucao" name="motivoDevolucao" rows="4" placeholder="Descreva o motivo da devolução" required></textarea>
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="condicoesPet">Condições do Pet</label>
+                        <textarea id="condicoesPet" name="condicoesPet" rows="4" placeholder="Informe as condições de saúde e comportamento do pet" required></textarea>
+                    </div>
+                </fieldset>                
+            
+                <fieldset>
+                    <legend>Qual PET está devolvendo?</legend>
+                
+                    <!-- Usando flexbox para alinhar os campos na mesma linha -->
+                    <div class="form-group-wrapper">
+                        <!-- Dropdown para escolher o tipo do pet (Cão ou Gato) -->
+                        <div class="form-group">
+                            <label for="tipoPet">Tipo</label>
+                            <select id="tipoPet" name="tipoPet" onchange="updatePetNames()" required>
+                                <option value="" disabled selected>Selecione</option>
+                                <option value="cao">Cão</option>
+                                <option value="gato">Gato</option>
+                            </select>
+                        </div>
+                
+                        <!-- Dropdown para os nomes do pet -->
+                        <div class="form-group">
+                            <label for="nomePet">Pet</label>
+                            <select id="nomePet" name="nomePet" required>
+                                <option value="" disabled selected>Selecione um nome</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>                                      
+
+                <!-- Botão de envio -->
+                <button type="submit">Finalizar devolução</button>
+            </form>
+
+            <!-- Caixa de mensagem de sucesso (inicialmente oculta) -->
+            <div id="successMessage" style="display:none; text-align: center; color: green; font-size: 18px; margin-top: 20px;">
+                O pedido de devolução foi realizado com sucesso. Aguarde nosso contato!
+            </div>
+        </section>
+    </main>
+
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="footer-container">
+      <!-- Informações da ONG -->
+      <div class="footer-info">
+          <h2>Eco Patas</h2>
+          <p>Av. Águia de Haia, 2633 - Cidade Antônio Estêvão de Carvalho, São Paulo - SP, 03694-000</p>
+
+          <h3>E-mail</h3>
+          <p>ecopatas.ong@gmail.com</p>
+
+          <h3>Telefone</h3>
+          <p>+55 (11) 9 1234-5678</p>
+      </div>
+
+      <!-- Links -->
+      <div class="footer-links">
+          <h3>Links</h3>
+          <ul>
+          <li><a href="../Página de Resgate/Resgate.html">Resgate</a></li>
+
+          <li><a href="../Página de Campanhas/Campanhas.html">Vacinação</a></li>
+
+          <li><a href="../Página Voluntários/Voluntários.html">Voluntários</a></li>
+
+          <li><a href="../Página Novidades/novidades.html">Novidades</a></li>
+
+          <li><a href="../Página Sobre/Sobre.html">Sobre</a></li>
+          </ul>
+      </div>
+
+      <!-- Ajuda -->
+      <div class="footer-help">
+          <h3>Ajuda</h3>
+          <ul>
+          <li><a href="../Página de Devolução/Devolução.html">Devolução</a></li>
+          <li><a href="../Página Políticas/Políticas de Privacidade.html">Políticas de Privacidade</a></li>
+          </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="footer-newsletter">
+          <h3>Newsletter</h3>
+          <form action="../Página Novidades/Novidades.html" method="get">
+              <input type="email" placeholder="Digite seu e-mail" required>
+              <button type="submit">Inscreva-se</button>
+          </form>
+      </div>
+
+      <!-- Ícones -->
+      <div class="footer-icons">
+          <img src="Ícones/dog-icon.png" alt="Ícone de cachorro" class="icon">
+          <img src="Ícones/cat-icon.png" alt="Ícone de gato" class="icon">
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>2024 Eco Patas. Todos os direitos reservados.</p>
+    </div>
+      
+  </footer>
+  <script src="Scripts.js"></script>
+
+</body>
+
+</html>

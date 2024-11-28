@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Adoção</title>
+    <link rel="stylesheet" href="Styles.css">
+    <link rel="shortcut icon" href="Ícones/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+    <div class="header-container">
+        <img src="Ícones/Logo.png" alt="Logo" class="logo">
+        <h1>Eco Patas</h1>
+        <nav class="navbar">
+            <ul class="navbar-list">
+            <li><a href="../Home.html" class="navbar-link">Home</a></li>
+            <li><a href="../Página ONGs/ONGs.html" class="navbar-link">ONGs</a></li>
+            <li class="dropdown">
+                <button class="navbar-link dropdown-btn">Espaços</button>
+                <ul class="dropdown-menu">
+                <li><a href="../Página Acompanhamento/Acompanhamento do plantio.html" class="dropdown-item">Acompanhamento do Plantio</a></li>
+
+                <li><a href="../Página de Campanhas/Campanhas.html" class="dropdown-item">Campanha de Vacinação</a></li>
+
+                <li><a href="../Página Voluntários/Voluntários.html" class="dropdown-item">Voluntários para o Plantio</a></li>
+
+                <li><a href="../Página Novidades/Novidades.html" class="dropdown-item">Novidades</a></li>
+                </ul>
+            </li>
+
+            <li><a href="../Página de Contato/Contato.html" class="navbar-link">Contato</a></li>
+
+            </ul>
+        </nav>
+
+        <div class="header-action">
+            <a href="../Página Quero Adotar/Quero Adotar.html" class="adopt-button">Quero Adotar</a>
+        </div>
+        
+    </div>
+    </header>
+
+    <main>
+        <section class="form-container">
+            <div class="image-row">
+                <!-- Substituindo o ícone de fogos de artifício por um ícone de coração -->
+                <div class="icon-placeholder"><i class="fas fa-trophy"></i></div>
+                <div class="icon-placeholder"><i class="fas fa-gift"></i></div>
+                <div class="icon-placeholder"><i class="fas fa-heart"></i></div>
+                <div class="icon-placeholder"><i class="fas fa-star"></i></div>
+            </div>
+            
+            <h2 class="center">Parabéns por sua iniciativa!!!</h2>
+            <p class="alert"> 
+                <i class="fas fa-exclamation-circle"></i>
+                <span class="alert-text">
+                    <strong>Atenção:</strong> É necessário ter 18 anos completos para efetuar a adoção. 
+                    Em caso de menores, procure por seu responsável.
+                </span>
+            </p>                        
+            
+            <form id="adoptionForm">
+                <fieldset>
+                    <legend>Dados do Responsável</legend>
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+                
+                    <label for="cpf">CPF</label>
+                    <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" required>
+                
+                    <label for="dataNascimento">Data de nascimento</label>
+                    <input type="date" id="dataNascimento" name="dataNascimento" required>
+                
+                    <!-- Mensagem de erro que será exibida via JS -->
+                    <div id="dataNascimentoError">É necessário ter 18 anos completos. Caso seja menor, peça ajuda ao seu responsável.</div>
+                
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone">
+                
+                    <label for="celular">Celular</label>
+                    <input type="tel" id="celular" name="celular" placeholder="Digite seu celular">
+                </fieldset>
+                
+            
+                <fieldset>
+                    <legend>Endereço</legend>
+                    <label for="cep">CEP</label>
+                    <input type="text" id="cep" name="cep" placeholder="Digite seu CEP" required>
+            
+                    <label for="estado">Estado</label>
+                    <input type="text" id="estado" name="estado" placeholder="Digite o estado" required>
+            
+                    <label for="cidade">Cidade</label>
+                    <input type="text" id="cidade" name="cidade" placeholder="Digite a cidade" required>
+            
+                    <label for="logradouro">Logradouro</label>
+                    <input type="text" id="logradouro" name="logradouro" placeholder="Digite o logradouro" required>
+            
+                    <label for="bairro">Bairro</label>
+                    <input type="text" id="bairro" name="bairro" placeholder="Digite o bairro" required>
+            
+                    <label for="numero">Número</label>
+                    <input type="text" id="numero" name="numero" placeholder="Digite o número" required>
+            
+                    <label for="complemento">Complemento</label>
+                    <input type="text" id="complemento" name="complemento" placeholder="Digite o complemento">
+            
+                    <label for="referencia">Referência</label>
+                    <input type="text" id="referencia" name="referencia" placeholder="Digite um ponto de referência">
+                </fieldset>
+            
+                <fieldset>
+                    <legend>Escolha do PET</legend>
+                
+                    <!-- Dropdown para escolher o tipo do pet (Cão ou Gato) -->
+                    <div class="form-group">
+                        <label for="tipoPet">Tipo</label>
+                        <select id="tipoPet" name="tipoPet" onchange="updatePetNames()" required>
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="cao">Cão</option>
+                            <option value="gato">Gato</option>
+                        </select>
+                    </div>
+                
+                    <!-- Dropdown para os nomes do pet -->
+                    <div class="form-group">
+                        <label for="nomePet">Pet</label>
+                        <select id="nomePet" name="nomePet" required>
+                            <option value="" disabled selected>Selecione um nome</option>
+                        </select>
+                    </div>
+                </fieldset>                         
+            
+                <!-- Botão de envio -->
+                <button type="submit">Finalizar pedido de adoção</button>
+            </form>
+
+            <!-- Caixa de mensagem de sucesso (inicialmente oculta) -->
+            <div id="successMessage" style="display:none; text-align: center; color: green; font-size: 18px; margin-top: 20px;">
+                Parabéns, seu pedido foi realizado com sucesso. Aguarde nosso contato!
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-container">
+        <!-- Informações da ONG -->
+        <div class="footer-info">
+            <h2>Eco Patas</h2>
+            <p>Av. Águia de Haia, 2633 - Cidade Antônio Estêvão de Carvalho, São Paulo - SP, 03694-000</p>
+
+            <h3>E-mail</h3>
+            <p>ecopatas.ong@gmail.com</p>
+
+            <h3>Telefone</h3>
+            <p>+55 (11) 9 1234-5678</p>
+        </div>
+
+        <!-- Links -->
+        <div class="footer-links">
+            <h3>Links</h3>
+            <ul>
+            <li><a href="../Página de Resgate/Resgate.html">Resgate</a></li>
+
+            <li><a href="../Página de Campanhas/Campanhas.html">Vacinação</a></li>
+
+            <li><a href="../Página Voluntários/Voluntários.html">Voluntários</a></li>
+
+            <li><a href="../Página Novidades/novidades.html">Novidades</a></li>
+
+            <li><a href="../Página Sobre/Sobre.html">Sobre</a></li>
+            </ul>
+        </div>
+
+        <!-- Ajuda -->
+        <div class="footer-help">
+            <h3>Ajuda</h3>
+            <ul>
+            <li><a href="../Página de Devolução/Devolução.html">Devolução</a></li>
+            <li><a href="../Página Políticas/Políticas de Privacidade.html">Políticas de Privacidade</a></li>
+            </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer-newsletter">
+            <h3>Newsletter</h3>
+            <form action="../Página Novidades/Novidades.html" method="get">
+                <input type="email" placeholder="Digite seu e-mail" required>
+                <button type="submit">Inscreva-se</button>
+            </form>
+        </div>
+
+        <!-- Ícones -->
+        <div class="footer-icons">
+            <img src="Ícones/dog-icon.png" alt="Ícone de cachorro" class="icon">
+            <img src="Ícones/cat-icon.png" alt="Ícone de gato" class="icon">
+        </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>2024 Eco Patas. Todos os direitos reservados.</p>
+        </div>
+        
+    </footer>
+
+    <script src="Scripts.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,537 @@
+/* Garantir que o corpo da página ocupe 100% da altura da tela e tenha a imagem de fundo */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-image: url(fundo.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px; /* Garante que o conteúdo abaixo da navbar não seja sobreposto */
+}
+
+/* Container principal para garantir que o footer fique no final */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px; /* Certifique-se de que isso seja o mesmo que a altura da navbar */
+    padding-top: 100px; /* Adiciona espaçamento extra para garantir que o conteúdo não seja coberto */
+}
+
+
+header, .navbar-link, .adopt-button {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navbar */
+header {
+    background-color: #d7c099; /* Cor do navbar */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100px;  /* Altura do navbar */
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+/* Container do Cabeçalho */
+.header-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin: 0; /* Sem margens extras */
+    padding: 0; /* Sem padding extra */
+}
+
+/* Estilo do logo */
+header .logo {
+    height: 150px; /* Ajuste a altura para um valor adequado */
+    width: auto;  /* Largura automática para manter a proporção */
+    margin-right: 20px; /* Espaço entre o logo e o título */
+}
+
+/* Título do Navbar */
+h1 {
+    font-size: 24px;
+    color: #fff;
+    margin-left: 10px; /* Adiciona espaço entre o logo e o título */
+}
+
+/* Navbar links */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Faz a navbar ocupar o espaço disponível */
+}
+
+/* Navbar links */
+.navbar-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;  /* Remove qualquer margem extra */
+    padding: 0;  /* Remove qualquer padding extra */
+}
+  
+.navbar-link {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    margin: 0;  /* Remover qualquer margem extra */
+}
+  
+.navbar-link:hover {
+    color: #fff;
+    background-color: #8b7d53; /* Cor de fundo no hover */
+    border-radius: 5px;
+}
+  
+/* Botão "Quero Adotar" */
+.header-action {
+    margin-left: 20px;
+}
+
+.adopt-button {
+    background-color: #8b7d53;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.adopt-button:hover {
+    background-color: #6d5b3b; /* Cor mais escura no hover */
+    cursor: pointer;
+}
+  
+/* Alinhamento do dropdown */
+.navbar .dropdown {
+    position: relative;
+    margin-right: 20px; /* Ajuste o espaçamento entre o dropdown e os itens à direita */
+}
+  
+.navbar .dropdown .dropdown-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    padding: 10px 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+  
+.navbar .dropdown .dropdown-btn:hover {
+    background-color: #8b7d53;
+    color: white;
+}
+  
+/* Estilo do menu dropdown */
+.navbar .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f7f3e8;
+    min-width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 1000;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+  
+.navbar .dropdown-menu .dropdown-item {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    display: block;
+}
+  
+.navbar .dropdown-menu .dropdown-item:hover {
+    background-color: #8b7d53;
+    color: white;
+}
+  
+/* Mostrar o menu quando o botão for clicado */
+.navbar .dropdown.show .dropdown-menu {
+    display: block;
+}
+
+
+
+
+
+
+/* Rodapé */
+footer {
+    background-color: #fdf6e4;
+    color: #333;
+    padding: 40px 20px;
+    font-size: 14px;
+    text-align: left;
+    position: relative; /* Não fixo, vai para o fundo da página automaticamente */
+    width: 100%;
+    left: 0; /* Garante que o footer comece da borda esquerda */
+    box-sizing: border-box; /* Inclui o padding na largura */
+    z-index: 1000;
+    margin-top: 40px;  /* Adiciona o espaço extra entre o conteúdo acima e o rodapé */
+}
+  
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: relative;
+    width: 100%; /* Garantir que ocupe toda a largura */
+    box-sizing: border-box; /* Inclui o padding na largura do container */
+}
+  
+/* Seções do Rodapé */
+.footer-info, .footer-links, .footer-help, .footer-newsletter {
+    flex: 1;
+    min-width: 200px;
+}
+  
+.footer-info h2, 
+.footer-links h3, 
+.footer-help h3, 
+.footer-newsletter h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+  
+.footer-info p {
+    font-size: 14px;
+    color: #555;
+}
+  
+.footer-links ul, 
+.footer-help ul {
+    list-style: none;
+    padding: 0;
+}
+  
+.footer-links li, 
+.footer-help li {
+    margin-bottom: 5px;
+}
+  
+.footer-links a, 
+.footer-help a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+  
+.footer-links a:hover, 
+.footer-help a:hover {
+    color: #8b7d53; /* Cor de destaque no hover */
+}
+  
+/* Formulário de Inscrição */
+.footer-newsletter form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+  
+.footer-newsletter input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex-grow: 1;
+}
+  
+.footer-newsletter button {
+    background-color: #8b7d53;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+  
+.footer-newsletter button:hover {
+    background-color: #6d5b3b;
+}
+  
+/* Ícones */
+.footer-icons {
+    position: absolute;
+    bottom: -80px;
+    right: 0;
+    display: flex;
+    gap: 20px;
+    box-sizing: border-box; /* Inclui o padding e border dentro da largura total */
+}
+  
+.footer-icons .icon {
+    height: 150px;
+    width: auto;
+    max-width: 100%; /* Garante que a largura dos ícones não ultrapasse a largura do rodapé */
+}
+  
+/* Rodapé Inferior */
+.footer-bottom {
+    text-align: center;
+    font-size: 12px;
+    color: #555;
+    margin-top: 40px;
+}
+  
+.footer-bottom p {
+    margin: 0;
+}
+  
+/* Responsividade */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-newsletter input {
+        width: 200px;
+    }
+  
+    /* Ajuste da navbar para dispositivos móveis */
+    .navbar-list {
+        flex-direction: column; /* Empilha os itens na versão mobile */
+        gap: 10px; /* Garante que os itens não fiquem colados */
+    }
+  
+    header .logo {
+        height: 50px; /* Logo menor em telas pequenas */
+    }
+}
+
+/* Estilo geral para o formulário */
+.form-container {
+    background-color: #f9f9f9; /* Cor de fundo mais suave */
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    width: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidade */
+    border: 1px solid #e0e0e0; /* Bordas suaves */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Melhorando o fundo para telas pequenas */
+@media (max-width: 768px) {
+    .form-container {
+        width: 80%; /* Ajusta o formulário para ficar maior em dispositivos menores */
+    }
+}
+
+/* Estilizando os placeholders nas caixas de texto */
+input::placeholder {
+    color: #bbb;
+}
+
+/* Imagens de placeholder */
+.image-row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.image-placeholder {
+    width: 50px;
+    height: 50px;
+    background-color: #ccc;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+}
+
+/* Cabeçalho */
+h2.center {
+    text-align: center;
+    color: #000000;
+}
+
+/* Estilos para a mensagem de alerta */
+.alert {
+    background-color: #fef2f2; /* Fundo suave e claro */
+    color: #d9534f; /* Cor vermelha para chamar a atenção */
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #d9534f; /* Borda vermelha */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 15px;
+    display: flex; /* Usamos flex para alinhar o ícone e o texto */
+    align-items: center; /* Alinha o ícone e o texto verticalmente */
+    margin-top: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Estilo do ícone dentro da mensagem */
+.alert i {
+    font-size: 24px;
+    margin-right: 10px; /* Espaço entre o ícone e o texto */
+}
+
+/* Estilo do texto em negrito */
+.alert strong {
+    font-weight: 700;
+}
+
+/* Alinhar o texto dentro do alerta para garantir boa disposição */
+.alert-text {
+    display: inline-block;
+    max-width: calc(100% - 40px); /* Evita que o texto ocupe mais espaço do que deveria */
+    line-height: 1.5; /* Aumenta o espaçamento entre as linhas do texto */
+}
+
+/* Estilos para os campos do formulário */
+form fieldset {
+    border: none;
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Estilização da mensagem de erro */
+#dataNascimentoError {
+    color: red;
+    font-weight: bold;
+    display: none; /* Inicialmente, a mensagem está oculta */
+}
+
+/* Estilo de outros elementos (se necessário) */
+form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #8b7d53;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8b7d53;
+}
+
+/* Contêiner para os elementos "Tipo" e "Pet" */
+fieldset {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens se ajustem */
+    gap: 20px; /* Espaço entre os itens */
+    justify-content: space-between;
+}
+
+/* Configuração dos grupos de campos de entrada para ficarem lado a lado */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Faz os elementos ocuparem um espaço proporcional */
+    max-width: 45%; /* Limita o tamanho máximo de cada item */
+}
+
+/* Ajustes adicionais para o label */
+label {
+    margin-bottom: 5px;
+}
+
+/* Estilo para o select */
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+}
+
+/* Certifique-se de que o select ocupa todo o espaço disponível */
+select {
+    width: 100%;
+}
+
+/* Estilo para a opção desativada (Selecione) */
+select option[disabled] {
+    color: #999;
+    font-style: italic;
+}
+
+/* Estilo ao passar o mouse sobre o select */
+select:hover {
+    border-color: #8b7d53;
+    cursor: pointer;
+}
+
+/* Estilo para os placeholders dos ícones */
+.icon-placeholder {
+    width: 80px;  /* Largura dos círculos de ícones */
+    height: 80px; /* Altura dos círculos de ícones */
+    background-color: #ffebcc;  /* Cor de fundo mais suave, combinando com a paleta de cores */
+    text-align: center;  /* Centralizando os ícones */
+    line-height: 80px; /* Alinhando o ícone no centro */
+    border-radius: 50%;  /* Tornando o contêiner redondo */
+    font-size: 36px; /* Tamanho do ícone */
+    color: #8b7d53;  /* Cor do ícone em um tom mais escuro que combina com o fundo */
+    margin: 0 10px; /* Espaço entre os ícones */
+    display: inline-block; /* Exibindo os ícones lado a lado */
+}
+
+/* Estilo para o contêiner dos ícones */
+.image-row {
+    display: flex;
+    justify-content: space-around; /* Alinhamento distribuído com espaçamento */
+    margin-bottom: 20px;
+}

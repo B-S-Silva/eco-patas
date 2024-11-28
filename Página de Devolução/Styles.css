@@ -1,0 +1,631 @@
+/* Garantir que o corpo da página ocupe 100% da altura da tela e tenha a imagem de fundo */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh; /* Garantir que a altura mínima seja 100% da tela */
+  overflow-x: hidden; /* Impede que o conteúdo ultrapasse a largura da tela */
+  background-image: url(fundo.png); /* Imagem de fundo */
+  background-size: cover; /* Ajusta a imagem para cobrir toda a área da tela */
+  background-position: center; /* Centraliza a imagem de fundo */
+  display: flex;
+  flex-direction: column; /* Alinha os elementos em coluna (header + conteúdo + footer) */
+  box-sizing: border-box;
+  padding-top: 50px;
+}
+
+/* Container principal para garantir que o footer fique no final */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px; /* Compensa a altura do navbar */
+}
+
+header, .navbar-link, .adopt-button {
+  font-family: 'Arial', sans-serif;
+}
+
+/* Navbar */
+header {
+  background-color: #d7c099; /* Cor do navbar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;  /* Altura do navbar */
+  z-index: 1000;
+}
+
+/* Container do Cabeçalho */
+.header-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin: 0; /* Sem margens extras */
+  padding: 0; /* Sem padding extra */
+}
+
+/* Estilo do logo */
+header .logo {
+  height: 150px; /* Ajuste a altura para um valor adequado */
+  width: auto;  /* Largura automática para manter a proporção */
+  margin-right: 20px; /* Espaço entre o logo e o título */
+}
+
+/* Título do Navbar */
+h1 {
+  font-size: 24px;
+  color: #fff;
+  margin-left: 10px; /* Adiciona espaço entre o logo e o título */
+}
+
+/* Navbar links */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; /* Faz a navbar ocupar o espaço disponível */
+}
+
+/* Navbar links */
+.navbar-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;  /* Remove qualquer margem extra */
+  padding: 0;  /* Remove qualquer padding extra */
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  margin: 0;  /* Remover qualquer margem extra */
+}
+
+.navbar-link:hover {
+  color: #fff;
+  background-color: #8b7d53; /* Cor de fundo no hover */
+  border-radius: 5px;
+}
+
+/* Botão "Quero Adotar" */
+.header-action {
+  margin-left: 20px;
+}
+
+.adopt-button {
+  background-color: #8b7d53;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.adopt-button:hover {
+  background-color: #6d5b3b; /* Cor mais escura no hover */
+  cursor: pointer;
+}
+
+/* Alinhamento do dropdown */
+.navbar .dropdown {
+  position: relative;
+  margin-right: 20px; /* Ajuste o espaçamento entre o dropdown e os itens à direita */
+}
+
+.navbar .dropdown .dropdown-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  padding: 10px 15px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.navbar .dropdown .dropdown-btn:hover {
+  background-color: #8b7d53;
+  color: white;
+}
+
+/* Estilo do menu dropdown */
+.navbar .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f7f3e8;
+  min-width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar .dropdown-menu .dropdown-item {
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+.navbar .dropdown-menu .dropdown-item:hover {
+  background-color: #8b7d53;
+  color: white;
+}
+
+/* Mostrar o menu quando o botão for clicado */
+.navbar .dropdown.show .dropdown-menu {
+  display: block;
+}
+
+
+
+
+
+
+/* Rodapé */
+footer {
+  background-color: #fdf6e4;
+  color: #333;
+  padding: 40px 20px;
+  font-size: 14px;
+  text-align: left;
+  position: relative; /* Não fixo, vai para o fundo da página automaticamente */
+  width: 100%;
+  left: 0; /* Garante que o footer comece da borda esquerda */
+  box-sizing: border-box; /* Inclui o padding na largura */
+  z-index: 1000;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  position: relative;
+  width: 100%; /* Garantir que ocupe toda a largura */
+  box-sizing: border-box; /* Inclui o padding na largura do container */
+}
+
+/* Seções do Rodapé */
+.footer-info, .footer-links, .footer-help, .footer-newsletter {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-info h2, 
+.footer-links h3, 
+.footer-help h3, 
+.footer-newsletter h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.footer-info p {
+  font-size: 14px;
+  color: #555;
+}
+
+.footer-links ul, 
+.footer-help ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li, 
+.footer-help li {
+  margin-bottom: 5px;
+}
+
+.footer-links a, 
+.footer-help a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover, 
+.footer-help a:hover {
+  color: #8b7d53; /* Cor de destaque no hover */
+}
+
+/* Formulário de Inscrição */
+.footer-newsletter form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.footer-newsletter input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  flex-grow: 1;
+}
+
+.footer-newsletter button {
+  background-color: #8b7d53;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.footer-newsletter button:hover {
+  background-color: #6d5b3b;
+}
+
+/* Ícones */
+.footer-icons {
+  position: absolute;
+  bottom: -80px;
+  right: 0;
+  display: flex;
+  gap: 20px;
+  box-sizing: border-box; /* Inclui o padding e border dentro da largura total */
+}
+
+.footer-icons .icon {
+  height: 150px;
+  width: auto;
+  max-width: 100%; /* Garante que a largura dos ícones não ultrapasse a largura do rodapé */
+}
+
+/* Rodapé Inferior */
+.footer-bottom {
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+  margin-top: 40px;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-newsletter input {
+      width: 200px;
+  }
+
+  /* Ajuste da navbar para dispositivos móveis */
+  .navbar-list {
+      flex-direction: column; /* Empilha os itens na versão mobile */
+      gap: 10px; /* Garante que os itens não fiquem colados */
+  }
+
+  header .logo {
+      height: 50px; /* Logo menor em telas pequenas */
+  }
+}
+
+/* Estilo para os ícones de devolução */
+.icon-placeholder {
+    width: 80px;  /* Largura dos círculos de ícones */
+    height: 80px; /* Altura dos círculos de ícones */
+    background-color: #ffebcc;  /* Cor de fundo mais suave */
+    text-align: center;  /* Centralizando os ícones */
+    line-height: 80px; /* Alinhando o ícone no centro */
+    border-radius: 50%;  /* Tornando o contêiner redondo */
+    font-size: 36px; /* Tamanho do ícone */
+    color: #8b7d53;  /* Cor do ícone em um tom mais escuro que combina com o fundo */
+    margin: 0 10px; /* Espaço entre os ícones */
+    display: inline-block; /* Exibindo os ícones lado a lado */
+}
+
+/* Estilos específicos para o alerta de devolução */
+.alert {
+    background-color: #fff3e6; /* Cor de fundo suave */
+    color: #f39c12; /* Cor laranja para alertar sobre devolução */
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #f39c12;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+/* Ajuste do título */
+h2.center {
+    text-align: center;
+    color: #000000;
+}
+
+/* Botão */
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #8b7d53; /* Cor vermelha para o botão de devolução */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8b7d53; /* Cor de hover */
+}
+
+/* Estilo geral para o formulário (ajustado para devolução) */
+.form-container {
+  background-color: #fff8f1; /* Fundo mais suave, talvez um tom de pêssego ou bege claro */
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 10px;
+  width: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border: 1px solid #e0e0e0; /* Bordas suaves */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Melhorando o fundo para telas pequenas */
+@media (max-width: 768px) {
+  .form-container {
+      width: 80%; /* Ajusta o formulário para ficar maior em dispositivos menores */
+  }
+}
+
+/* Estilos para a mensagem de alerta */
+.alert {
+  background-color: #fff3e6; /* Fundo suave em tom de bege claro */
+  color: #f39c12; /* Cor laranja para chamar atenção (alerta) */
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid #f39c12; /* Borda laranja */
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Estilo do ícone dentro da mensagem */
+.alert i {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+/* Estilo do texto em negrito */
+.alert strong {
+  font-weight: 700;
+}
+
+/* Estilo para os campos do formulário */
+form fieldset {
+  border: none;
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+form select, form input {
+  width: 100%; /* Garante que o input e select ocupem toda a largura */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Envolvendo as form-group para usar o Flexbox */
+.form-group-wrapper {
+  display: flex;
+  gap: 20px; /* Espaço entre os campos */
+  justify-content: space-between; /* Garante que os campos ocupem toda a largura disponível */
+  flex-wrap: wrap; /* Permite que os campos quebrem para a linha de baixo em telas pequenas */
+}
+
+/* Cada grupo de campo deve ter uma largura proporcional */
+.form-group {
+  flex: 1 1 45%; /* Cada campo ocupa 45% da largura do contêiner (isso pode ser ajustado conforme necessário) */
+  margin-bottom: 15px;
+}
+
+/* Garante que o label ocupe toda a largura disponível */
+.form-group label {
+  display: block;
+  margin-bottom: 5px; /* Espaço entre o label e o campo */
+}
+
+/* Ajuste para os campos de texto (input, select, textarea) */
+input[type="date"], select, textarea {
+  width: 100%; /* Garante que o campo ocupe toda a largura do contêiner */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Estilo geral do botão */
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #8b7d53; /* Cor vermelha */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #8b7d53; /* Cor de hover */
+}
+
+/* Estilo de ícones */
+.icon-placeholder {
+  width: 80px;
+  height: 80px;
+  background-color: #ffebcc; /* Cor de fundo suave */
+  text-align: center;
+  line-height: 80px;
+  border-radius: 50%;
+  font-size: 36px;
+  color: #8b7d53; /* Cor do ícone */
+  margin: 0 10px;
+  display: inline-block;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+  /* Ajusta o formulário para se tornar mais largo em telas pequenas */
+  .form-container {
+    width: 80%;
+  }
+
+  /* No caso de telas pequenas, os campos devem ocupar 100% da largura */
+  .form-group {
+    flex: 1 1 100%; /* Faz os campos ocuparem toda a largura */
+  }
+}
+
+/* Ajuste global para compensar navbar fixa */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif; /* Fonte mais profissional */
+  background-color: #F4F6F9; /* Fundo suave */
+}
+
+/* Conteúdo principal logo após a navbar */
+.message-container {
+  background-color: #ffffff; /* Cor clara para o bloco de mensagem */
+  color: #333333; /* Texto escuro para contraste */
+  text-align: center;
+  padding: 60px 30px; /* Espaçamento interno adequado */
+  width: 80%; /* Definido para 80% da largura da tela */
+  max-width: 1200px; /* Limita a largura máxima */
+  box-sizing: border-box;
+  margin: 90px auto; /* Centraliza e ajusta a margem superior para a altura da navbar */
+  border-radius: 8px; /* Bordas suaves */
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1); /* Sombra discreta para profundidade */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeitos de transição */
+}
+
+/* Efeito de hover - mais sutil */
+.message-container:hover {
+  transform: translateY(-5px); /* Desloca o elemento levemente para cima */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* Sombra mais intensa no hover */
+}
+
+/* Título da mensagem */
+.message-container h1 {
+  font-size: 2rem; /* Tamanho do título moderado */
+  font-weight: 600; /* Peso de fonte mais leve */
+  color: #1D2635; /* Cor escura para o título */
+  margin-bottom: 20px;
+  text-transform: uppercase; /* Maiúsculas para um visual mais sério */
+  letter-spacing: 2px; /* Aumenta o espaçamento das letras */
+  line-height: 1.3; /* Melhora a legibilidade */
+}
+
+/* Texto da mensagem */
+.message-container p {
+  font-size: 1.1rem; /* Tamanho de texto legível */
+  line-height: 1.6; /* Aumenta o espaçamento entre as linhas */
+  color: #555555; /* Cor do texto mais suave */
+  margin: 0;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+  .message-container {
+    padding: 40px 20px; /* Menos padding em telas menores */
+    width: 90%; /* A largura aumenta para 90% da tela em dispositivos móveis */
+    margin-top: 80px; /* Ajuste para telas pequenas */
+  }
+
+  .message-container h1 {
+    font-size: 1.6rem; /* Tamanho menor do título */
+  }
+
+  .message-container p {
+    font-size: 1rem; /* Tamanho menor do texto */
+  }
+}
+
+/* Contêiner dos ícones */
+.image-row {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+/* Envolvendo as form-group para usar o Flexbox */
+.form-group-wrapper {
+  display: flex;
+  gap: 20px; /* Espaçamento entre os campos */
+  justify-content: space-between; /* Garante que os campos ocupem toda a largura disponível */
+}
+
+/* Garante que cada campo ocupe uma linha inteira */
+.form-group {
+  margin-bottom: 15px; /* Espaço entre os campos */
+}
+
+.form-group label {
+  display: block; /* Faz com que o label ocupe toda a largura disponível */
+  margin-bottom: 5px; /* Espaço entre o label e o campo */
+}
+
+input[type="date"], textarea {
+  width: 100%; /* Faz com que o input e textarea ocupem toda a largura disponível */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
+
+textarea {
+  resize: vertical; /* Permite que o usuário redimensione a altura da textarea */
+}

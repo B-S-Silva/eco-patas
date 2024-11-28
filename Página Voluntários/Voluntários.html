@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voluntários</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="Styles.css">
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="header-container">
+        <img src="Ícones/Logo.png" alt="Logo" class="logo">
+        <h1>Eco Patas</h1>
+        <nav class="navbar">
+            <ul class="navbar-list">
+            <li><a href="../Home.html" class="navbar-link">Home</a></li>
+            <li><a href="../Página ONGs/ONGs.html" class="navbar-link">ONGs</a></li>
+            <li class="dropdown">
+                <button class="navbar-link dropdown-btn">Espaços</button>
+                <ul class="dropdown-menu">
+                <li><a href="../Página Acompanhamento/Acompanhamento do plantio.html" class="dropdown-item">Acompanhamento do Plantio</a></li>
+
+                <li><a href="../Página de Campanhas/Campanhas.html" class="dropdown-item">Campanha de Vacinação</a></li>
+
+                <li><a href="../Página Voluntários/Voluntários.html" class="dropdown-item">Voluntários para o Plantio</a></li>
+
+                <li><a href="../Página Novidades/Novidades.html" class="dropdown-item">Novidades</a></li>
+                </ul>
+            </li>
+
+            <li><a href="../Página de Contato/Contato.html" class="navbar-link">Contato</a></li>
+
+            </ul>
+        </nav>
+
+        <div class="header-action">
+            <a href="../Página Quero Adotar/Quero Adotar.html" class="adopt-button">Quero Adotar</a>
+        </div>
+            
+        </div>
+    </header>
+
+    <section class="voluntarios">
+        <div class="voluntarios-header">
+            <img src="Logo.png" alt="Logo EcoPatas" class="voluntarios-logo">
+            <h1>Seja um Voluntário</h1>
+            <p>Ajude-nos a plantar um futuro mais verde!</p>
+        </div>
+    </section>    
+    
+    <section class="intro">
+        <h2>Junte-se a Nós</h2>
+        <p>
+            No Eco Patas, acreditamos que pequenas ações podem criar um grande impacto. Estamos organizando iniciativas de plantio de árvores e precisamos de pessoas como você para tornar isso possível. Seja voluntário e faça parte da transformação sustentável!
+        </p>
+    </section>
+    
+    <section class="benefits">
+        <h2>Por que ser um voluntário?</h2>
+        <ul>
+            <li>🌱 Contribua diretamente para um planeta mais saudável.</li>
+            <li>🌎 Aprenda sobre práticas de sustentabilidade e conservação ambiental.</li>
+            <li>🤝 Faça parte de uma comunidade engajada e apaixonada.</li>
+            <li>🎉 Experimente a satisfação de transformar o mundo ao seu redor.</li>
+        </ul>
+    </section>
+    
+    <section class="volunteer-form">
+        <h2>Cadastre-se como Voluntário</h2>
+        <p>
+            Preencha o formulário abaixo para se juntar a nossas ações de plantio de árvores. Entraremos em contato com você!
+        </p>
+        <form id="volunteerForm" action="https://formsubmit.co/SEU-EMAIL-AQUI" method="POST">
+            <label for="name">Nome Completo:</label>
+            <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+    
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+    
+            <label for="phone">Telefone:</label>
+            <input type="text" id="phone" name="phone" placeholder="Digite seu telefone (opcional)">
+    
+            <label for="availability">Disponibilidade:</label>
+            <select id="availability" name="availability" required>
+                <option value="">Selecione</option>
+                <option value="manhã">Manhã</option>
+                <option value="tarde">Tarde</option>
+                <option value="fim de semana">Fins de Semana</option>
+            </select>
+    
+            <button type="submit">Quero Participar</button>
+        </form>
+        <div id="successMessage" style="display: none; margin-top: 20px; font-size: 18px; color: green;">
+            Parabéns, você agora faz parte da Família Eco Patas. Aguarde nosso contato!
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-container">
+        <!-- Informações da ONG -->
+        <div class="footer-info">
+            <h2>Eco Patas</h2>
+            <p>Av. Águia de Haia, 2633 - Cidade Antônio Estêvão de Carvalho, São Paulo - SP, 03694-000</p>
+
+            <h3>E-mail</h3>
+            <p>ecopatas.ong@gmail.com</p>
+
+            <h3>Telefone</h3>
+            <p>+55 (11) 9 1234-5678</p>
+        </div>
+
+        <!-- Links -->
+        <div class="footer-links">
+            <h3>Links</h3>
+            <ul>
+            <li><a href="../Página de Resgate/Resgate.html">Resgate</a></li>
+
+            <li><a href="../Página de Campanhas/Campanhas.html">Vacinação</a></li>
+
+            <li><a href="../Página Voluntários/Voluntários.html">Voluntários</a></li>
+
+            <li><a href="../Página Novidades/novidades.html">Novidades</a></li>
+
+            <li><a href="../Página Sobre/Sobre.html">Sobre</a></li>
+            </ul>
+        </div>
+
+        <!-- Ajuda -->
+        <div class="footer-help">
+            <h3>Ajuda</h3>
+            <ul>
+            <li><a href="../Página de Devolução/Devolução.html">Devolução</a></li>
+            <li><a href="../Página Políticas/Políticas de Privacidade.html">Políticas de Privacidade</a></li>
+            </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer-newsletter">
+            <h3>Newsletter</h3>
+            <form action="../Página Novidades/Novidades.html" method="get">
+                <input type="email" placeholder="Digite seu e-mail" required>
+                <button type="submit">Inscreva-se</button>
+            </form>
+        </div>
+
+        <!-- Ícones -->
+        <div class="footer-icons">
+            <img src="Ícones/dog-icon.png" alt="Ícone de cachorro" class="icon">
+            <img src="Ícones/cat-icon.png" alt="Ícone de gato" class="icon">
+        </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>2024 Eco Patas. Todos os direitos reservados.</p>
+        </div>
+        
+    </footer>
+    <script src="Scripts.js"></script>
+
+</body>
+
+</html>
